@@ -43,3 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225c2fc492199347db620d12f1bcbfb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sheepPrefab: {fileID: 769380121905262598, guid: 3c4c98d30f4ec90da9aa6b1315bc4a2f,
+    type: 3}
+  foxPrefab: {fileID: 0}
+  spawnSheepTime: 6
+  foxSpawnTime: 0
+  spawnFox: 0
