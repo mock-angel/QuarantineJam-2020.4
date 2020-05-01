@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: -5938903027450364712}
   - component: {fileID: -7093837134777403685}
   - component: {fileID: 8985945367855812569}
+  - component: {fileID: 4587161968918385695}
+  - component: {fileID: -4373830916752967584}
   m_Layer: 8
   m_Name: Sheep Test
   m_TagString: WantedAnimal
@@ -31,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 769380121905262598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.69, y: 0.58, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5f2ae1c59e7b8f54e9bb2a4d93ab6916, type: 3}
+  m_Sprite: {fileID: 584631676473961770, guid: 90d979c0ee3032444b196a3d2b8a41ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -177,9 +179,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.021504164, y: 0.1720351}
+  m_Offset: {x: 0, y: 0.022908837}
   serializedVersion: 2
-  m_Radius: 2.7149622
+  m_Radius: 0.24800196
 --- !u!50 &8985945367855812569
 Rigidbody2D:
   serializedVersion: 4
@@ -201,3 +203,38 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &4587161968918385695
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769380121905262598}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 90147474062d35641a802b72421c68a0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-4373830916752967584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769380121905262598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2025344b14c6f4e8674d33d2968b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isItInTheFarm: 0
+  helthNumber: 3
+  numOfRecorcesAfterHunt: 10
+  numOfRecorcesPreducePerMinute: 10

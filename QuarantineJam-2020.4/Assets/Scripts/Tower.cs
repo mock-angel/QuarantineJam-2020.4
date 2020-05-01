@@ -8,7 +8,8 @@ public class Tower : MonoBehaviour
     [HideInInspector] public int NumOfHuntersInTheTower;//the number of the Hunters that they are inside the tower
 
     [SerializeField] private GameObject towerMenu;
-
+    [SerializeField] private GameObject[] hunters;
+    [SerializeField] private float maxNumOfHunters;//max number of hunters in the tower
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,12 @@ public class Tower : MonoBehaviour
 
     public void UpgradeTower()//add more hunters to that tower
     {
-        NumOfHuntersInTheTower++;
+        if (NumOfHuntersInTheTower < maxNumOfHunters)
+        {
+            NumOfHuntersInTheTower++;
+            hunters[NumOfHuntersInTheTower - 1].SetActive(true);
+        }
+        
     }
 
     public void DestroyTower()//destroy the tower

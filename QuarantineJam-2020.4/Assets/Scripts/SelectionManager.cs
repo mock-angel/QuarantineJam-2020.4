@@ -83,13 +83,5 @@ public class SelectionManager : MonoBehaviour
 
             }
         }
-        else
-        {
-            if (selectedTower != null)
-            { 
-                selectedTower.OnDeSelected();
-                selectedTower = null;
-            }
-        }
     }
 }
