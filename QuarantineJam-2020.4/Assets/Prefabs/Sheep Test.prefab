@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2233365726837384765}
   - component: {fileID: 5834773338205545910}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sheep Test
   m_TagString: Untagged
   m_Icon: {fileID: 0}
