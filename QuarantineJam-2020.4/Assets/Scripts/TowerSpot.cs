@@ -20,11 +20,18 @@ public class TowerSpot : MonoBehaviour
         
     }
 
-    private void OnMouseDown()
+    public void OnSelected()
     {
+        //Replace code here.
+        print("TowerSpot.OnSelected() called");
         gameObject.SetActive(false);
         GameObject towerObj = Instantiate(towerPrefab, transform.position + positionOffset, towerPrefab.transform.rotation);
         Tower tower = towerObj.GetComponent<Tower>();
         tower.SpotUnderTower = this;
+    }
+    
+    public void OnDeSelected(){
+        
+        print("TowerSpot.OnDeSelected() called");
     }
 }
