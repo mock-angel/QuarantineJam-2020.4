@@ -7,6 +7,8 @@ public class TowerAttackeCommander : MonoBehaviour
     [HideInInspector] public bool IsAttacking;
 
     private bool hasToTargetWantedAnimal;
+    private Transform target;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,8 @@ public class TowerAttackeCommander : MonoBehaviour
             {
                 if (collision.tag == "WantedAnimal")
                 {
+                    target = collision.transform;
+                    EventsSystem.OnTargetEnter(target);
                     IsAttacking = true;
                     print("Entered");
                     //give shoot command to the hunters to hunt WantedAnimal
@@ -42,6 +46,10 @@ public class TowerAttackeCommander : MonoBehaviour
             {
                 if (collision.tag == "NotWantedAnimal")
                 {
+                    target = collision.transform;
+                    EventsSystem.OnTargetEnter(target);
+                    IsAttacking = true;
+                    print("Entered");
                     //give shoot command to the hunters to hunt NotWantedAnimal
                 }
             }
@@ -50,20 +58,14 @@ public class TowerAttackeCommander : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (hasToTargetWantedAnimal)
+        if (target != null)
         {
-            if (collision.tag == "WantedAnimal")
+            if (collision.gameObject == target.gameObject)
             {
                 IsAttacking = false;
+                EventsSystem.OnTargetExit();
                 print("Exit");
                 //give shoot command to the hunters to hunt WantedAnimal
-            }
-        }
-        else
-        {
-            if (collision.tag == "NotWantedAnimal")
-            {
-                //give shoot command to the hunters to hunt NotWantedAnimal
             }
         }
     }
