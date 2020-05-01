@@ -13,25 +13,13 @@ public class Tower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        NumOfHuntersInTheTower = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
-    private void OnMouseDown()
-    {
-        if (towerMenu.activeInHierarchy)
-        {
-            towerMenu.SetActive(false);//hide the menu
-        }
-        else
-        {
-            towerMenu.SetActive(true);//show the menu
-        }
     }
 
     //private void OnMouseExit()
@@ -41,7 +29,7 @@ public class Tower : MonoBehaviour
 
     public void UpgradeTower()//add more hunters to that tower
     {
-        print("Upgrade");
+        NumOfHuntersInTheTower++;
     }
 
     public void DestroyTower()//destroy the tower
@@ -49,14 +37,21 @@ public class Tower : MonoBehaviour
         Destroy(gameObject);
         SpotUnderTower.gameObject.SetActive(true);
     }
-    
+
     public void OnSelected()
     {
-        print("Tower.OnSelected() called");
+        if (!towerMenu.activeInHierarchy)
+        {
+            towerMenu.SetActive(true);//hide the menu
+        }
+
     }
-    
-    public void OnDeSelected(){
-        
-        print("Tower.OnDeSelected() called");
+
+    public void OnDeSelected()
+    {
+        if (towerMenu.activeInHierarchy)
+        {
+            towerMenu.SetActive(false);//show the menu
+        }
     }
 }

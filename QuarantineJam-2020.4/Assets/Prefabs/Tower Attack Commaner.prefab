@@ -60,3 +60,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d3636569b815c44a9da8a846585046d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsAttacking: 0
+  tower: {fileID: 0}
+  weaponPrefab: {fileID: 8623450584911369740, guid: 30e3ecfb661dd9a46bf9cb69385ba834,
+    type: 3}
+  numOfArrowsPerMinute: 20
+  weaponPosition: {fileID: 0}

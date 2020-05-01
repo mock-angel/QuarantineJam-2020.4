@@ -46,12 +46,10 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.name);
         if (collision.tag == "WantedAnimal" || collision.tag == "NotWantedAnimal")
         {
             print(collision.name);
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
     }
 }

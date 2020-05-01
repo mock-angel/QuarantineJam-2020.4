@@ -59,7 +59,7 @@ public class SheepFoxGeneratorScript : MonoBehaviour
             destinationSetter.target = finalFarmPosition;
         else destinationSetter.target = finalEscapePosition;
         
-        print("" + probe);
+        //print("" + probe);
     }
     
     void CreateFox(){

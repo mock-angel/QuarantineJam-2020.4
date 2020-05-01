@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8169714571971050420}
   - component: {fileID: 3822545101678037990}
   - component: {fileID: 1286950658152675700}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Tower Spot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

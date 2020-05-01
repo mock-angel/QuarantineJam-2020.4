@@ -260,7 +260,7 @@ PrefabInstance:
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.27
+      value: -3.12
       objectReference: {fileID: 0}
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
@@ -317,10 +317,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3822545101678037990, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_Name
       value: Tower Spot 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a15d95f0abff170458cbfd380d7d3ffe, type: 3}
@@ -339,7 +349,7 @@ PrefabInstance:
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1
+      value: 1.71
       objectReference: {fileID: 0}
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
@@ -396,10 +406,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3822545101678037990, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_Name
       value: Tower Spot 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a15d95f0abff170458cbfd380d7d3ffe, type: 3}
@@ -424,7 +444,7 @@ PrefabInstance:
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.32
+      value: -3.1699998
       objectReference: {fileID: 0}
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
@@ -481,10 +501,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3822545101678037990, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_Name
       value: Tower Spot 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a15d95f0abff170458cbfd380d7d3ffe, type: 3}
@@ -577,6 +607,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &968529742
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6910941281837296435, guid: e4a371278b32e4344bbe00093e1cb85a,
+        type: 3}
+      propertyPath: m_Name
+      value: EventSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910941281837296444, guid: e4a371278b32e4344bbe00093e1cb85a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910941281837296444, guid: e4a371278b32e4344bbe00093e1cb85a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910941281837296444, guid: e4a371278b32e4344bbe00093e1cb85a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910941281837296444, guid: e4a371278b32e4344bbe00093e1cb85a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910941281837296444, guid: e4a371278b32e4344bbe00093e1cb85a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910941281837296444, guid: e4a371278b32e4344bbe00093e1cb85a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910941281837296444, guid: e4a371278b32e4344bbe00093e1cb85a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910941281837296444, guid: e4a371278b32e4344bbe00093e1cb85a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910941281837296444, guid: e4a371278b32e4344bbe00093e1cb85a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910941281837296444, guid: e4a371278b32e4344bbe00093e1cb85a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6910941281837296444, guid: e4a371278b32e4344bbe00093e1cb85a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e4a371278b32e4344bbe00093e1cb85a, type: 3}
 --- !u!1 &1105614664
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +721,7 @@ PrefabInstance:
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.95
+      value: -2.8
       objectReference: {fileID: 0}
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
@@ -679,10 +778,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3822545101678037990, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_Name
       value: Tower Spot 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a15d95f0abff170458cbfd380d7d3ffe, type: 3}
@@ -713,7 +822,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1607349242}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: TowerSpots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +868,7 @@ PrefabInstance:
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.19
+      value: -3.04
       objectReference: {fileID: 0}
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
@@ -816,10 +925,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3822545101678037990, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_Name
       value: Tower Spot 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a15d95f0abff170458cbfd380d7d3ffe, type: 3}
@@ -844,7 +963,7 @@ PrefabInstance:
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.28
+      value: -3.1299999
       objectReference: {fileID: 0}
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
@@ -901,10 +1020,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3822545101678037990, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_Name
       value: Tower Spot 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a15d95f0abff170458cbfd380d7d3ffe, type: 3}
@@ -959,7 +1088,7 @@ PrefabInstance:
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.79
+      value: 1.4000001
       objectReference: {fileID: 0}
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
@@ -971,10 +1100,20 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3822545101678037990, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_Name
       value: Tower Spot 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a15d95f0abff170458cbfd380d7d3ffe, type: 3}
@@ -999,7 +1138,7 @@ PrefabInstance:
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.24
+      value: -3.09
       objectReference: {fileID: 0}
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
@@ -1056,10 +1195,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3822545101678037990, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_Name
       value: Tower Spot 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8169714571971050420, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
@@ -1083,7 +1232,7 @@ PrefabInstance:
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.54
+      value: -3.3899999
       objectReference: {fileID: 0}
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
@@ -1140,10 +1289,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3822545101678037990, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_Name
       value: Tower Spot 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a15d95f0abff170458cbfd380d7d3ffe, type: 3}
@@ -1168,7 +1327,7 @@ PrefabInstance:
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: 1.82
       objectReference: {fileID: 0}
     - target: {fileID: 639140402509119697, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
@@ -1225,10 +1384,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3822545101678037990, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
         type: 3}
       propertyPath: m_Name
       value: Tower Spot 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881047175657350386, guid: a15d95f0abff170458cbfd380d7d3ffe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a15d95f0abff170458cbfd380d7d3ffe, type: 3}
