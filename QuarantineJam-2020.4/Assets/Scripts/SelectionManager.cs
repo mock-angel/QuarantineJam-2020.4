@@ -6,7 +6,7 @@ public class SelectionManager : MonoBehaviour
 {
     
     TowerSpot selectedSpot;
-    
+    Tower selectedTower;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +29,7 @@ public class SelectionManager : MonoBehaviour
             GameObject selection = hit.transform.gameObject;
             TowerSpot spot = selection.GetComponent<TowerSpot>();
             
+            //Check if raycast hit TowerSpot.
             if(spot != null){
                 //So we clicked on a tower.
                 
@@ -46,6 +47,29 @@ public class SelectionManager : MonoBehaviour
                     spot.OnDeSelected();
                     
                     selectedSpot = null;
+                }
+                
+            }
+            
+            //Now see if the raycast hit a tower.
+            Tower tower = selection.GetComponent<Tower>();
+            if(tower != null){
+                //So we clicked on a tower.
+                
+                if(tower != selectedTower){
+                
+                    tower.OnSelected();
+                    
+                    //Deselect previously selected tower.
+                    if(selectedTower != null)
+                        selectedTower.OnDeSelected();
+                    
+                    selectedTower = tower;
+                }
+                else {
+                    tower.OnDeSelected();
+                    
+                    selectedTower = null;
                 }
                 
             }

@@ -49,4 +49,14 @@ public class Tower : MonoBehaviour
         Destroy(gameObject);
         SpotUnderTower.gameObject.SetActive(true);
     }
+    
+    public void OnSelected()
+    {
+        print("Tower.OnSelected() called");
+    }
+    
+    public void OnDeSelected(){
+        
+        print("Tower.OnDeSelected() called");
+    }
 }
