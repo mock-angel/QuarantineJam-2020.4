@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - WantedAnimal
+  - NotWantedAnimal
   layers:
   - Default
   - TransparentFX
