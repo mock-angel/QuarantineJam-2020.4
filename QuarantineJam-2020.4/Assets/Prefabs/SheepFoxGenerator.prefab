@@ -51,5 +51,5 @@ MonoBehaviour:
   spawnFox: 0
   finalFarmPosition: {fileID: 0}
   finalEscapePosition: {fileID: 0}
-  farmBuilt: 0
+  farmBuilt: 1
   probabilityOfEnteringFarm: 0.5

@@ -56,10 +56,10 @@ public class SheepFoxGeneratorScript : MonoBehaviour
         
         float probe = Random.Range(0f, 1f);
         if(probe <= probabilityOfEnteringFarm)
-            enterFarm = true;
-        else enterFarm = false;
+            destinationSetter.target = finalFarmPosition;
+        else destinationSetter.target = finalEscapePosition;
         
-        destinationSetter.target = finalEscapePosition;
+        print("" + probe);
     }
     
     void CreateFox(){
