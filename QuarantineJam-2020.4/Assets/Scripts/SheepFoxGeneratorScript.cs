@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using Pathfinding;
+
 public class SheepFoxGeneratorScript : MonoBehaviour
 {
     public GameObject sheepPrefab;
@@ -15,6 +17,13 @@ public class SheepFoxGeneratorScript : MonoBehaviour
     
     float nextSheepSpawnTime = 0;
     float nextFoxSpawnTime = 0;
+    
+    public Transform finalFarmPosition;
+    public Transform finalEscapePosition;
+    
+    public bool farmBuilt;
+    [Range(0f, 1f)]
+    public float probabilityOfEnteringFarm;
     
     // Update is called once per frame
     void Update()
@@ -41,6 +50,16 @@ public class SheepFoxGeneratorScript : MonoBehaviour
         
         //Decide whether sheep goes inside farm.
         //...
+        AIDestinationSetter destinationSetter = sheep.GetComponent<AIDestinationSetter>();
+        
+        bool enterFarm = false;
+        
+        float probe = Random.Range(0f, 1f);
+        if(probe <= probabilityOfEnteringFarm)
+            destinationSetter.target = finalFarmPosition;
+        else destinationSetter.target = finalEscapePosition;
+        
+        print("" + probe);
     }
     
     void CreateFox(){
