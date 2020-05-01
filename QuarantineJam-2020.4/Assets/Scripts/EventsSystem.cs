@@ -5,18 +5,10 @@ using UnityEngine;
 
 public static class EventsSystem
 {
-    public static event Action<Transform> onTargetEnter;//trigger when an animal enter the attack tower area
-    public static event Action onTargetExit;//trigger when an animal exit the attack tower area
+    public static event Action<float> onUpdateResourcesCount;
 
-
-
-    public static void OnTargetEnter(Transform target)
+    public static void OnUpdateResourcesCount(float resourcesToAdd)
     {
-        onTargetEnter(target);
-    }
-
-    public static void OnTargetExit()
-    {
-        onTargetExit();
+        onUpdateResourcesCount(resourcesToAdd);
     }
 }

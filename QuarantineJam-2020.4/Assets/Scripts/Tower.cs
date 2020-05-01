@@ -10,11 +10,17 @@ public class Tower : MonoBehaviour
     [SerializeField] private GameObject towerMenu;
     [SerializeField] private GameObject[] hunters;
     [SerializeField] private float maxNumOfHunters;//max number of hunters in the tower
+    [SerializeField] private float numOfResourcesNeededToUpgrade;
+    [SerializeField] private float numOfResourcesConsumedByHunterPerMinute;
+
+    private ResourcesManager resourcesManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        resourcesManager = FindObjectOfType<ResourcesManager>();
         NumOfHuntersInTheTower = 1;
+        StartCoroutine(ConsumeResources());
     }
 
     // Update is called once per frame
@@ -22,18 +28,13 @@ public class Tower : MonoBehaviour
     {
 
     }
-
-    //private void OnMouseExit()
-    //{
-    //    towerMenu.SetActive(false);//show the menu
-    //}
-
     public void UpgradeTower()//add more hunters to that tower
     {
-        if (NumOfHuntersInTheTower < maxNumOfHunters)
+        if (NumOfHuntersInTheTower < maxNumOfHunters && resourcesManager.numOfResources >= numOfResourcesNeededToUpgrade)
         {
             NumOfHuntersInTheTower++;
             hunters[NumOfHuntersInTheTower - 1].SetActive(true);
+            EventsSystem.OnUpdateResourcesCount(-numOfResourcesNeededToUpgrade);
         }
         
     }
@@ -58,6 +59,15 @@ public class Tower : MonoBehaviour
         if (towerMenu.activeInHierarchy)
         {
             towerMenu.SetActive(false);//show the menu
+        }
+    }
+
+    public IEnumerator ConsumeResources()
+    {
+        while (this != null)
+        {
+            yield return new WaitForSeconds(60 / (numOfResourcesConsumedByHunterPerMinute * NumOfHuntersInTheTower));
+            EventsSystem.OnUpdateResourcesCount(-1);
         }
     }
 }

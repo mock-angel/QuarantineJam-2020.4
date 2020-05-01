@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Sheep : MonoBehaviour
 {
-    [HideInInspector] public bool isItInTheFarm;
 
     [SerializeField] private float helthNumber;//how many times should we hit the sheep to hunt
     [SerializeField] private float numOfRecorcesAfterHunt;//number of the recorces that you gonna git if you hunted the sheep;
     [SerializeField] private float numOfRecorcesPreducePerMinute;//number of the recorces that the sheep is gonna preduce each minute in the farm
     
-
+    private bool isItInTheFarm;
     private Animator animator;
     private float hitsTakenCounter;
 
@@ -33,7 +32,7 @@ public class Sheep : MonoBehaviour
         while (isItInTheFarm)
         {
             yield return new WaitForSeconds(60 / numOfRecorcesPreducePerMinute);
-            //add the generated recources to the recources count
+            EventsSystem.OnUpdateResourcesCount(1);
         }
     }
 
@@ -44,9 +43,23 @@ public class Sheep : MonoBehaviour
             hitsTakenCounter++;
             if (hitsTakenCounter >= helthNumber)
             {
-                //add some recources to the recources count
+                EventsSystem.OnUpdateResourcesCount(numOfRecorcesAfterHunt);
                 Destroy(gameObject);
             }
+        }
+        else if (collision.tag == "Farm")
+        {
+            isItInTheFarm = true;
+            StartCoroutine(PreduceRecources());
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Farm")
+        {
+            isItInTheFarm = false;
+            StopCoroutine(PreduceRecources());
         }
     }
 }

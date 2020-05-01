@@ -234,7 +234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae2025344b14c6f4e8674d33d2968b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isItInTheFarm: 0
   helthNumber: 3
   numOfRecorcesAfterHunt: 10
-  numOfRecorcesPreducePerMinute: 10
+  numOfRecorcesPreducePerMinute: 40

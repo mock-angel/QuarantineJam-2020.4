@@ -124,3 +124,5 @@ MonoBehaviour:
   towerPrefab: {fileID: 4417709164278605027, guid: ae9d61d9779bc8e44893597232485ce5,
     type: 3}
   positionOffset: {x: 0, y: 0, z: 0}
+  resourcesManager: {fileID: 0}
+  numOfResourcesNeededToCreat: 5

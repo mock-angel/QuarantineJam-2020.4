@@ -36,6 +36,10 @@ public class Weapon : MonoBehaviour
                 transform.Rotate(new Vector3(0, 0, 180));
                 transform.position += transform.right * Time.deltaTime * weaponSpeed;
             }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
