@@ -47,7 +47,7 @@ public class TowerSpot : MonoBehaviour
     {
         if (resourcesManager.numOfResources < numOfResourcesNeededToCreat)
         {
-            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, .25f);
+            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, .35f);
         }
         else
         {
