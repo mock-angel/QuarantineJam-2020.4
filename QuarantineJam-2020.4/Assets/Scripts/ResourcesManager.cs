@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 
-public class ResourcesManager : MonoBehaviour
+public class ResourcesManager : TickObjectMonoBehaviour
 {
     
     public static ResourcesManager Instance {get; private set;}
@@ -35,7 +35,7 @@ public class ResourcesManager : MonoBehaviour
     {
         Instance = this;
         
-        EventsSystem.onUpdateResourcesCount += UpdateResourcesNumber;
+//        EventsSystem.onUpdateResourcesCount += UpdateResourcesNumber;
     }
     
     void Start()
@@ -86,6 +86,10 @@ public class ResourcesManager : MonoBehaviour
     
     }
     
+    public void GainSettlers(int count){
+        idleSettlersCount += count;
+    }
+    
     // <summary>
     // Returns true if operation was successful.
     // </summary>
@@ -98,11 +102,22 @@ public class ResourcesManager : MonoBehaviour
         return true;
         
     }
-    
-    private void OnDestroy()
-    {
-        EventsSystem.onUpdateResourcesCount -= UpdateResourcesNumber;
+    public override void OnTick(){
+        int c = idleSettlersCount;
+        for(int i = 0; i < c; i++) if(EatFood(1)) idleSettlersCount -= 1;
     }
+    
+    public void EatFoodCumulative(int count, int foodPerUnit, out int unit){
+        int c = count;
+        unit = count;
+        for(int i = 0; i < c; i++) if(!ResourcesManager.Instance.EatFood(foodPerUnit)) unit -= 1;
+    }
+    
+    
+//    private void OnDestroy()
+//    {
+//        EventsSystem.onUpdateResourcesCount -= UpdateResourcesNumber;
+//    }
 
 //    public IEnumerator KillHunters()
 //    {

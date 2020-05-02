@@ -39,6 +39,7 @@ public class SheepFarm : TickObjectMonoBehaviour
     
     void Awake(){
         Instance = this;
+        TickManager.Instance.AddITickObject((ITickObject)this);
     }
     
     void Start(){
@@ -101,7 +102,7 @@ public class SheepFarm : TickObjectMonoBehaviour
     public override void OnTick(){
         
         //Calculate amount of wool Gained this turn.
-        
+        print("SheepFarm: OnTick");
         int woolGainThisTurn;
         if( shepherdsInFarm >= sheepsInFarm ) woolGainThisTurn = sheepsInFarm * woolPerShepherdPerTick;
         
@@ -114,17 +115,17 @@ public class SheepFarm : TickObjectMonoBehaviour
         
         if( !(shepherdsInFarm >= sheepsInFarm) ) sheepLostThisTurn = sheepsInFarm - shepherdsInFarm;
         
+        sheepsInFarm -= sheepLostThisTurn;
+        
         //Calculate loss of shepherds due to attrition.
         
         int totalFood = 100;//Will have to replace this ofcourse to ResourceManager.
         
         int totalEatFood = shepherdsInFarm;
         
-        int totalShepherdsListThisTurn = 0;
+        int totalShepherdsLostThisTurn = 0;
         
-        if(totalFood < totalEatFood)
-            totalShepherdsListThisTurn = sheepsInFarm - totalEatFood;
-        
+        ResourcesManager.Instance.EatFoodCumulative(shepherdsInFarm, 1, out shepherdsInFarm);
         
     }
 }
