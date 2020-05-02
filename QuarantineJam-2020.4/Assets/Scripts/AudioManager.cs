@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
+    
+    public static AudioManager Instance {get; private set;}
+    
     [SerializeField] private Sprite playMusicSprite;
     [SerializeField] private Sprite muteMusicSprite;
     [SerializeField] private Image startSceneMusicImage;
@@ -91,6 +94,7 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
+        Instance = this;
         isMusicMuted = false;
         isSoundsMuted = false;
         numbOfPlayingSounds = 0;

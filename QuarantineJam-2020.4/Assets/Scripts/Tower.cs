@@ -1,57 +1,78 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class Tower : MonoBehaviour
+public class Tower : TickObjectMonoBehaviour
 {
     [HideInInspector] public TowerSpot SpotUnderTower;//the spot under the tower
+    
     [HideInInspector] public int NumOfHuntersInTheTower;//the number of the Hunters that they are inside the tower
 
     [SerializeField] private GameObject towerMenu;
-    [SerializeField] private GameObject[] hunters;
-    [SerializeField] private float maxNumOfHunters;//max number of hunters in the tower
-    [SerializeField] private float numOfResourcesNeededToUpgrade;
-    [SerializeField] private float numOfResourcesConsumedByHunterPerMinute;
+//    [SerializeField] private GameObject[] hunters;
+    [SerializeField] private int huntersInTower;
+    [SerializeField] private int maxNumOfHunters;//max number of hunters in the tower
+    [SerializeField] private int woolToUpgrade;
+    
+    [SerializeField] private int meatEatenPerHunterPerTick;
+    
+    public int initialUpgradeCost = 5;
+    int maxHunterLimit;
+    int currentUpgradeCost;
    
-    private AudioManager audioManager;
-    private ResourcesManager resourcesManager;
-
-    // Start is called before the first frame update
+    public TextMeshProUGUI hunterCountTxt;
+    
     void Start()
     {
-        resourcesManager = FindObjectOfType<ResourcesManager>();
-        audioManager = FindObjectOfType<AudioManager>();
         NumOfHuntersInTheTower = 1;
-        StartCoroutine(ConsumeResources());
-        resourcesManager.CreatedHunters.Add(hunters[NumOfHuntersInTheTower - 1]);
+        currentUpgradeCost = initialUpgradeCost;
+//        StartCoroutine(ConsumeResources());
+//        resourcesManager.CreatedHunters.Add(hunters[NumOfHuntersInTheTower - 1]);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+    
+    
+    void Update(){
+        
+        hunterCountTxt.text = huntersInTower.ToString();
     }
+    
+    
+    
     public void UpgradeTower()//add more hunters to that tower
     {
-        if (NumOfHuntersInTheTower < maxNumOfHunters && resourcesManager.numOfResources >= numOfResourcesNeededToUpgrade)
-        {
-            NumOfHuntersInTheTower++;
-            hunters[NumOfHuntersInTheTower - 1].SetActive(true);
-            resourcesManager.CreatedHunters.Add(hunters[NumOfHuntersInTheTower - 1]);
-            EventsSystem.OnUpdateResourcesCount(-numOfResourcesNeededToUpgrade);
-            audioManager.PlayUpgradeTowerAudio();
+        //now we first check if we have enough resources.
+        
+        if(ResourcesManager.Instance.SpendWool(currentUpgradeCost)){
+            
+            maxHunterLimit += currentUpgradeCost;
+            
+            currentUpgradeCost *= 2;
         }
+        
+//        if (NumOfHuntersInTheTower < maxNumOfHunters && resourcesManager.numOfResources >= woolToUpgrade)
+//        {
+//            NumOfHuntersInTheTower++;
+//            hunters[NumOfHuntersInTheTower - 1].SetActive(true);
+////            resourcesManager.CreatedHunters.Add(hunters[NumOfHuntersInTheTower - 1]);
+////            EventsSystem.OnUpdateResourcesCount(-woolToUpgrade);
+//            audioManager.PlayUpgradeTowerAudio();
+//        }
     }
-
+    
+    public void OnClickedAddHunter(){
+        
+    }
+    
     public void DestroyTower()//destroy the tower
     {
         Destroy(gameObject);
         SpotUnderTower.gameObject.SetActive(true);
-        audioManager.PlayDestroyTowerAudio();
+        AudioManager.Instance.PlayDestroyTowerAudio();
 
         for (int i = 0; i < NumOfHuntersInTheTower; i++)
         {
-            resourcesManager.CreatedHunters.Remove(hunters[i]);
+//            resourcesManager.CreatedHunters.Remove(hunters[i]);
         }
     }
 
@@ -71,13 +92,25 @@ public class Tower : MonoBehaviour
             towerMenu.SetActive(false);//show the menu
         }
     }
-
-    public IEnumerator ConsumeResources()
-    {
-        while (this != null)
-        {
-            yield return new WaitForSeconds(60 / (numOfResourcesConsumedByHunterPerMinute * NumOfHuntersInTheTower));
-            EventsSystem.OnUpdateResourcesCount(-1);
-        }
+    
+    public override void OnTick(){
+    
+        //Hunter's Lunchtime.
+        int huntersCount = huntersInTower;
+        for(int i = 0; i < huntersCount ; i++)//Serve every hunter.
+        
+            if(!ResourcesManager.Instance.EatFood(meatEatenPerHunterPerTick))
+            
+                huntersInTower -= 1;//remove hunter if food did not suffice.
+            
     }
+    
+//    public IEnumerator ConsumeResources()
+//    {
+//        while (this != null)
+//        {
+//            yield return new WaitForSeconds(60 / (numOfResourcesConsumedByHunterPerMinute * NumOfHuntersInTheTower));
+//            EventsSystem.OnUpdateResourcesCount(-1);
+//        }
+//    }
 }
