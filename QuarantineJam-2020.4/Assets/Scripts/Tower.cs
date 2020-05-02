@@ -50,7 +50,7 @@ public class Tower : TickObjectMonoBehaviour
             maxHunterLimit += currentUpgradeCost;
             
             currentUpgradeCost *= 2;
-            
+            huntersInTower++;
             AudioManager.Instance.PlayUpgradeTowerAudio();
         }
         
@@ -101,7 +101,7 @@ public class Tower : TickObjectMonoBehaviour
     
         //Hunter's Lunchtime.
         int huntersCount = huntersInTower;
-        ResourcesManager.Instance.EatFoodCumulative(huntersInTower, meatEatenPerHunterPerTick, out huntersInTower)
+        ResourcesManager.Instance.EatFoodCumulative(huntersInTower, meatEatenPerHunterPerTick, out huntersInTower);
     }
     
 //    public IEnumerator ConsumeResources()
