@@ -45,9 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sheepPrefab: {fileID: 769380121905262598, guid: 3c4c98d30f4ec90da9aa6b1315bc4a2f,
     type: 3}
-  foxPrefab: {fileID: 0}
+  foxPrefab: {fileID: 769380121905262598, guid: 4e30f77fb1e7ab44b8123e9a488c626f,
+    type: 3}
   spawnSheepTime: 6
-  foxSpawnTime: 0
+  foxSpawnTime: 5
   spawnFox: 0
   finalFarmPosition: {fileID: 0}
   finalEscapePosition: {fileID: 0}

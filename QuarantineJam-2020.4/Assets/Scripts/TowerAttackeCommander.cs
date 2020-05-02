@@ -41,12 +41,23 @@ public class TowerAttackeCommander : MonoBehaviour
     {
         while (true)
         {
-            if (target != null && !target.GetComponent<Sheep>().isItInTheFarm && tower.huntersInTower > 0)
+            if (target != null && tower.huntersInTower > 0)
             {
-                Transform weaponObj = Instantiate(weaponPrefab, weaponPosition.position, weaponPrefab.rotation);
-                Weapon weapon = weaponObj.GetComponent<Weapon>();
-                weapon.damageValue = tower.huntersInTower;
-                weapon.target = this.target;
+                if (target.tag == "WantedAnimal" && !target.GetComponent<Sheep>().isItInTheFarm)
+                {
+                    Transform weaponObj = Instantiate(weaponPrefab, weaponPosition.position, weaponPrefab.rotation);
+                    Weapon weapon = weaponObj.GetComponent<Weapon>();
+                    weapon.damageValue = tower.huntersInTower;
+                    weapon.target = this.target;
+                }
+                else if(target.tag == "NotWantedAnimal" && !target.GetComponent<Sheep>().isItInTheFarm)
+                {
+                    Transform weaponObj = Instantiate(weaponPrefab, weaponPosition.position, weaponPrefab.rotation);
+                    Weapon weapon = weaponObj.GetComponent<Weapon>();
+                    weapon.damageValue = tower.huntersInTower;
+                    weapon.target = this.target;
+                }
+                
             }
            
             yield return new WaitForSeconds(60 / (numOfArrowsPerMinute * tower.huntersInTower));
