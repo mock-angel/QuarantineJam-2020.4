@@ -8,7 +8,7 @@ public class Tower : TickObjectMonoBehaviour
     [HideInInspector] public TowerSpot SpotUnderTower;//the spot under the tower
     
     [SerializeField] private GameObject towerMenu;
-//    [SerializeField] private GameObject[] hunters;
+    [SerializeField] private GameObject hunterImage;
     [HideInInspector] public int huntersInTower;
     //[SerializeField] private int maxNumOfHunters;//max number of hunters in the tower
     //[SerializeField] private int woolToUpgrade;
@@ -52,6 +52,7 @@ public class Tower : TickObjectMonoBehaviour
             currentUpgradeCost *= 2;
             huntersInTower++;
             AudioManager.Instance.PlayUpgradeTowerAudio();
+            hunterImage.SetActive(true);
         }
         
 //        if (NumOfHuntersInTheTower < maxNumOfHunters && resourcesManager.numOfResources >= woolToUpgrade)
@@ -64,9 +65,18 @@ public class Tower : TickObjectMonoBehaviour
 //        }
     }
     
-    public void OnClickedAddHunter(){
-        
+    public void DowngradeTower(int downGradeTimes)
+    {
+        for (int i = 0; i < downGradeTimes; i++)
+        {
+            currentUpgradeCost /= 2;
+            maxHunterLimit -= currentUpgradeCost;
+        }
     }
+
+    //public void OnClickedAddHunter(){
+        
+    //}
     
     public void DestroyTower()//destroy the tower
     {
@@ -101,7 +111,19 @@ public class Tower : TickObjectMonoBehaviour
     
         //Hunter's Lunchtime.
         int huntersCount = huntersInTower;
+        print(huntersCount + " huntCount " + huntersInTower + " huntInTower");
         ResourcesManager.Instance.EatFoodCumulative(huntersInTower, meatEatenPerHunterPerTick, out huntersInTower);
+        if (huntersInTower <= 0)
+        {
+            hunterImage.SetActive(false);
+        }
+        if (huntersInTower < huntersCount)
+        {
+            DowngradeTower(Mathf.Clamp(huntersCount - huntersInTower, 0, maxHunterLimit));
+            print(huntersCount + " huntCount " + huntersInTower + " huntInTower");
+            huntersCount = huntersInTower;
+            print(huntersCount + " huntCount " + huntersInTower + " huntInTower");
+        }
     }
     
 //    public IEnumerator ConsumeResources()

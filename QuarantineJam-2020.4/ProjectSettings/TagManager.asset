@@ -48,9 +48,9 @@ TagManager:
   - name: TowerSpot
     uniqueID: 16048815
     locked: 0
-  - name: Tower
-    uniqueID: 2729339989
-    locked: 0
   - name: Animal
     uniqueID: 1435282443
+    locked: 0
+  - name: Tower
+    uniqueID: 2729339989
     locked: 0

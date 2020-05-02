@@ -44,7 +44,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numOfResources: 16
-  CreatedHunters: []
+  meatCount: 5
+  woolCount: 10
+  idleSettlersCount: 3
   resourcesCountTxt: {fileID: 0}
+  meatCountTxt: {fileID: 0}
+  woolCountTxt: {fileID: 0}
+  idleSettlersCountTxt: {fileID: 0}
   numOfHuntersToDiePerMinute: 5
-  audioManager: {fileID: 0}
+  setlerMeatCost: 2

@@ -332,7 +332,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1565627307
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 737676e326c22274dac280eefaae7052, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -385,6 +385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpotUnderTower: {fileID: 0}
   towerMenu: {fileID: 1624415871}
+  hunterImage: {fileID: 2231078938424511256}
   huntersInTower: 0
   meatEatenPerHunterPerTick: 1
   initialUpgradeCost: 2
@@ -666,6 +667,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3414422012841356060, guid: aa03d4b8799dd2949917b9ab464a703f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aa03d4b8799dd2949917b9ab464a703f, type: 3}
+--- !u!1 &2231078938424511256 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3414422012841356049, guid: aa03d4b8799dd2949917b9ab464a703f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3572503235149750281}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2231078938424511254 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3414422012841356063, guid: aa03d4b8799dd2949917b9ab464a703f,
@@ -689,6 +696,11 @@ PrefabInstance:
       propertyPath: weaponPosition
       value: 
       objectReference: {fileID: 3803762413791401023}
+    - target: {fileID: 5286126820640961700, guid: 75f30dee0a2a46b4ca3df6b2fc19ea31,
+        type: 3}
+      propertyPath: timeToShootArrow
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5286126820640961703, guid: 75f30dee0a2a46b4ca3df6b2fc19ea31,
         type: 3}
       propertyPath: m_Name

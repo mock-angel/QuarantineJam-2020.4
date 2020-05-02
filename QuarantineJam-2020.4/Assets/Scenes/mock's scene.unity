@@ -2879,16 +2879,6 @@ PrefabInstance:
       propertyPath: finalEscapePosition
       value: 
       objectReference: {fileID: 1831718689}
-    - target: {fileID: 8137954469215197355, guid: 4a6dce2e1580f984bbab8d64d91c539c,
-        type: 3}
-      propertyPath: spawnFox
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137954469215197355, guid: 4a6dce2e1580f984bbab8d64d91c539c,
-        type: 3}
-      propertyPath: foxSpawnTime
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a6dce2e1580f984bbab8d64d91c539c, type: 3}
 --- !u!1001 &2554106503061299576
@@ -20229,6 +20219,11 @@ PrefabInstance:
       propertyPath: TickSlider
       value: 
       objectReference: {fileID: 1445655041}
+    - target: {fileID: 4696857321809540177, guid: 26e87a62e6827693e83f8d18787f691e,
+        type: 3}
+      propertyPath: TickLength
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26e87a62e6827693e83f8d18787f691e, type: 3}
 --- !u!1001 &7418543510359673865
@@ -20293,21 +20288,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1618105089740731526, guid: 1a066815d6eb3b442bcc614d52f8e514,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3006154057269592096, guid: 1a066815d6eb3b442bcc614d52f8e514,
-        type: 3}
-      propertyPath: soundInfo.mainMusicVolume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3006154057269592096, guid: 1a066815d6eb3b442bcc614d52f8e514,
-        type: 3}
-      propertyPath: soundInfo.mainMusicClip
-      value: 
-      objectReference: {fileID: 8300000, guid: aa97caf9150303c499ee1e88c5a8b845, type: 3}
     - target: {fileID: 8614928436503469750, guid: 1a066815d6eb3b442bcc614d52f8e514,
         type: 3}
       propertyPath: m_Name
@@ -20334,11 +20314,6 @@ PrefabInstance:
       objectReference: {fileID: 1390457442}
     - target: {fileID: 7993069963189352921, guid: 2c9208d8fddeda84aa0481e411e4aa54,
         type: 3}
-      propertyPath: audioManager
-      value: 
-      objectReference: {fileID: 1681881727}
-    - target: {fileID: 7993069963189352921, guid: 2c9208d8fddeda84aa0481e411e4aa54,
-        type: 3}
       propertyPath: meatCountTxt
       value: 
       objectReference: {fileID: 1390457442}
@@ -20354,23 +20329,8 @@ PrefabInstance:
       objectReference: {fileID: 728013876}
     - target: {fileID: 7993069963189352921, guid: 2c9208d8fddeda84aa0481e411e4aa54,
         type: 3}
-      propertyPath: setlerMeatCost
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7993069963189352921, guid: 2c9208d8fddeda84aa0481e411e4aa54,
-        type: 3}
-      propertyPath: meatCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7993069963189352921, guid: 2c9208d8fddeda84aa0481e411e4aa54,
-        type: 3}
       propertyPath: woolCount
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7993069963189352921, guid: 2c9208d8fddeda84aa0481e411e4aa54,
-        type: 3}
-      propertyPath: idleSettlersCount
-      value: 3
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7993069963189352922, guid: 2c9208d8fddeda84aa0481e411e4aa54,
         type: 3}

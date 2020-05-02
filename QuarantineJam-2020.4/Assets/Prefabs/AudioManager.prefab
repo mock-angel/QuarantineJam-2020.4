@@ -237,7 +237,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -344,7 +344,7 @@ MonoBehaviour:
   audioSourceNatureMusic: {fileID: 1618105089740731526}
   soundInfo:
     mainMusicClip: {fileID: 8300000, guid: aa97caf9150303c499ee1e88c5a8b845, type: 3}
-    mainMusicVolume: 0
+    mainMusicVolume: 1
     natureMusicClip: {fileID: 8300000, guid: 503ef73c26baf6843bb035cdb3bf20ec, type: 3}
     natureMusicVolume: 2
     buildTowerClip: {fileID: 8300000, guid: dbe80853864fab046a4fe21a8f24b477, type: 3}

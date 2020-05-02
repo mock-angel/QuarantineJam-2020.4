@@ -109,7 +109,7 @@ public class SheepFarm : TickObjectMonoBehaviour
     public override void OnTick(){
         
         //Calculate amount of wool Gained this turn.
-        print("SheepFarm: OnTick");
+        //print("SheepFarm: OnTick");
         int woolGainThisTurn;
         if( shepherdsInFarm >= sheepsInFarm ) woolGainThisTurn = sheepsInFarm * woolPerShepherdPerTick;
         

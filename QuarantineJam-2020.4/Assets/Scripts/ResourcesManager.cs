@@ -106,7 +106,7 @@ public class ResourcesManager : TickObjectMonoBehaviour
     // </summary>
     public bool SpendWool(int woolToSpend)
     {
-        print(woolToSpend + "  " + woolCount);
+        //print(woolToSpend + "  " + woolCount);
         if (woolCount < woolToSpend) return false;
 
         woolCount -= woolToSpend;
