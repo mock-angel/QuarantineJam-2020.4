@@ -61,10 +61,8 @@ public class TowerAttackeCommander : MonoBehaviour
                 if (collision.tag == "WantedAnimal")
                 {
                     target = collision.transform;
-                    //EventsSystem.OnTargetEnter(target);
                     IsAttacking = true;
-                    print("Entered");
-                    //give shoot command to the hunters to hunt WantedAnimal
+                    //print("Entered");
                 }
             }
             else
@@ -72,10 +70,8 @@ public class TowerAttackeCommander : MonoBehaviour
                 if (collision.tag == "NotWantedAnimal")
                 {
                     target = collision.transform;
-                    //EventsSystem.OnTargetEnter(target);
                     IsAttacking = true;
                     //print("Entered");
-                    //give shoot command to the hunters to hunt NotWantedAnimal
                 }
             }
         }
@@ -88,29 +84,8 @@ public class TowerAttackeCommander : MonoBehaviour
             if (collision.gameObject == target.gameObject)
             {
                 IsAttacking = false;
-                //EventsSystem.OnTargetExit();
                 //print("Exit");
-                //give shoot command to the hunters to hunt WantedAnimal
             }
         }
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (hasToTargetWantedAnimal)
-    //    {
-    //        if (collision.tag == "WantedAnimal")
-    //        {
-    //            //give shoot command to the hunters to hunt WantedAnimal
-    //        }
-    //    }
-    //    else
-    //    {
-    //        if (collision.tag == "NotWantedAnimal")
-    //        {
-    //            //give shoot command to the hunters to hunt NotWantedAnimal
-    //        }
-    //    }
-
-    //}
 }

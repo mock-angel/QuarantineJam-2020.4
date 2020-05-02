@@ -8,7 +8,8 @@ public class TowerSpot : MonoBehaviour
     [SerializeField] private Vector3 positionOffset;
     [SerializeField] private ResourcesManager resourcesManager;
     [SerializeField] private float numOfResourcesNeededToCreat;
-    
+    [SerializeField] private AudioManager audioManager;
+
     private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
@@ -33,12 +34,13 @@ public class TowerSpot : MonoBehaviour
             Tower tower = towerObj.GetComponent<Tower>();
             tower.SpotUnderTower = this;
             EventsSystem.OnUpdateResourcesCount(-numOfResourcesNeededToCreat);
+            audioManager.PlayBuildTowerAudio();
         }
     }
     
     public void OnDeSelected(){
         
-        print("TowerSpot.OnDeSelected() called");
+        //print("TowerSpot.OnDeSelected() called");
     }
 
     public void ChickForCreatAbility(float notNeeded)
@@ -51,5 +53,10 @@ public class TowerSpot : MonoBehaviour
         {
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1);
         }
+    }
+
+    private void OnDestroy()
+    {
+        EventsSystem.onUpdateResourcesCount -= ChickForCreatAbility;
     }
 }

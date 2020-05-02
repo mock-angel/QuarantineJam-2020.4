@@ -32,7 +32,10 @@ public class Sheep : MonoBehaviour
         while (isItInTheFarm)
         {
             yield return new WaitForSeconds(60 / numOfRecorcesPreducePerMinute);
-            EventsSystem.OnUpdateResourcesCount(1);
+            if (isItInTheFarm)
+            {
+                EventsSystem.OnUpdateResourcesCount(1);
+            }
         }
     }
 

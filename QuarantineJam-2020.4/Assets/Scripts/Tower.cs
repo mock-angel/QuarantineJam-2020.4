@@ -12,15 +12,18 @@ public class Tower : MonoBehaviour
     [SerializeField] private float maxNumOfHunters;//max number of hunters in the tower
     [SerializeField] private float numOfResourcesNeededToUpgrade;
     [SerializeField] private float numOfResourcesConsumedByHunterPerMinute;
-
+   
+    private AudioManager audioManager;
     private ResourcesManager resourcesManager;
 
     // Start is called before the first frame update
     void Start()
     {
         resourcesManager = FindObjectOfType<ResourcesManager>();
+        audioManager = FindObjectOfType<AudioManager>();
         NumOfHuntersInTheTower = 1;
         StartCoroutine(ConsumeResources());
+        resourcesManager.CreatedHunters.Add(hunters[NumOfHuntersInTheTower - 1]);
     }
 
     // Update is called once per frame
@@ -34,15 +37,22 @@ public class Tower : MonoBehaviour
         {
             NumOfHuntersInTheTower++;
             hunters[NumOfHuntersInTheTower - 1].SetActive(true);
+            resourcesManager.CreatedHunters.Add(hunters[NumOfHuntersInTheTower - 1]);
             EventsSystem.OnUpdateResourcesCount(-numOfResourcesNeededToUpgrade);
+            audioManager.PlayUpgradeTowerAudio();
         }
-        
     }
 
     public void DestroyTower()//destroy the tower
     {
         Destroy(gameObject);
         SpotUnderTower.gameObject.SetActive(true);
+        audioManager.PlayDestroyTowerAudio();
+
+        for (int i = 0; i < NumOfHuntersInTheTower; i++)
+        {
+            resourcesManager.CreatedHunters.Remove(hunters[i]);
+        }
     }
 
     public void OnSelected()

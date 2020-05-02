@@ -52,7 +52,6 @@ public class Weapon : MonoBehaviour
     {
         if (collision.tag == "WantedAnimal" || collision.tag == "NotWantedAnimal")
         {
-            print(collision.name);
             Destroy(gameObject);
         }
     }

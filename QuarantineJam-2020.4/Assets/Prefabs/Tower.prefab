@@ -136,7 +136,8 @@ MonoBehaviour:
   - {fileID: 3375728176319924367}
   maxNumOfHunters: 3
   numOfResourcesNeededToUpgrade: 5
-  numOfResourcesConsumedByHunterPerMinute: 0
+  numOfResourcesConsumedByHunterPerMinute: 10
+  audioManager: {fileID: 0}
 --- !u!1001 &124561880831058846
 PrefabInstance:
   m_ObjectHideFlags: 0

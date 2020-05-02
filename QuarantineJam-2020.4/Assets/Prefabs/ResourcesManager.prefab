@@ -43,5 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3879e5eeb2b6d4540a6489c3319a4ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numOfResources: 10
+  numOfResources: 16
+  CreatedHunters: []
   resourcesCountTxt: {fileID: 0}
+  numOfHuntersToDiePerMinute: 5
+  audioManager: {fileID: 0}

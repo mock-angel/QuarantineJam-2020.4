@@ -236,4 +236,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   helthNumber: 3
   numOfRecorcesAfterHunt: 10
-  numOfRecorcesPreducePerMinute: 40
+  numOfRecorcesPreducePerMinute: 0
