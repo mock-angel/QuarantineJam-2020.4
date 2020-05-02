@@ -30,6 +30,9 @@ public class SheepFarm : TickObjectMonoBehaviour
     public TextMeshProUGUI shepherdsInFarmTxt;
     
     [Space(5)]
+    public int foodGainPerSheepOwned = 2;
+    
+    [Space(5)]
     [Range(0, 5)]
     public int woolPerShepherdPerTick = 1;
     
@@ -79,14 +82,18 @@ public class SheepFarm : TickObjectMonoBehaviour
             maxSheepLimit += currentUpgradeCost ;
             
             currentUpgradeCost *= 2;//Upgrade cost doubles.
+            addShepherdCountPerAdd = currentUpgradeCost / 10;
         }
         
     }
     
     public bool AddSheep(){
         if(sheepsInFarm < maxSheepLimit){
+        
             sheepsInFarm += 1;
+            
             return true;
+            
         }
         else return false;
         
@@ -110,6 +117,8 @@ public class SheepFarm : TickObjectMonoBehaviour
         
         ResourcesManager.Instance.EarnWool(woolGainThisTurn);
         
+        ResourcesManager.Instance.EarnFood(woolGainThisTurn * foodGainPerSheepOwned);
+        
         //Calculate loss of cattle this turn.
         int sheepLostThisTurn = 0;
         
@@ -118,12 +127,6 @@ public class SheepFarm : TickObjectMonoBehaviour
         sheepsInFarm -= sheepLostThisTurn;
         
         //Calculate loss of shepherds due to attrition.
-        
-        int totalFood = 100;//Will have to replace this ofcourse to ResourceManager.
-        
-        int totalEatFood = shepherdsInFarm;
-        
-        int totalShepherdsLostThisTurn = 0;
         
         ResourcesManager.Instance.EatFoodCumulative(shepherdsInFarm, 1, out shepherdsInFarm);
         

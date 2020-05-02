@@ -34,7 +34,7 @@ public class ResourcesManager : TickObjectMonoBehaviour
     private void Awake()
     {
         Instance = this;
-        
+        TickManager.Instance.AddITickObject((ITickObject)this);
 //        EventsSystem.onUpdateResourcesCount += UpdateResourcesNumber;
     }
     
@@ -103,14 +103,18 @@ public class ResourcesManager : TickObjectMonoBehaviour
         
     }
     public override void OnTick(){
-        int c = idleSettlersCount;
-        for(int i = 0; i < c; i++) if(EatFood(1)) idleSettlersCount -= 1;
+        EatFoodCumulative(idleSettlersCount, 1, out idleSettlersCount);
     }
     
-    public void EatFoodCumulative(int count, int foodPerUnit, out int unit){
-        int c = count;
-        unit = count;
-        for(int i = 0; i < c; i++) if(!ResourcesManager.Instance.EatFood(foodPerUnit)) unit -= 1;
+    // <summary>
+    // If u have 100 workers(unitCount), and u want every unit to get certain 
+    // amount of food(foodPerUnit), this function will output to out param
+    // (unitSurvived) the remaining units that survived attrition.
+    // </summary>
+    public void EatFoodCumulative(int unitCount, int foodPerUnit, out int unitSurvived){
+        int c = unitCount;
+        unitSurvived = unitCount;
+        for(int i = 0; i < c; i++) if(!ResourcesManager.Instance.EatFood(foodPerUnit)) unitSurvived -= 1;
     }
     
     

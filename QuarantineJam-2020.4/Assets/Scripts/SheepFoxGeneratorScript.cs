@@ -59,7 +59,7 @@ public class SheepFoxGeneratorScript : MonoBehaviour
             destinationSetter.target = finalFarmPosition;
         else destinationSetter.target = finalEscapePosition;
         
-        ResourcesManager.Instance.GainSettlers(1);
+//        ResourcesManager.Instance.GainSettlers(1);
         //print("" + probe);
     }
     
@@ -68,3 +68,5 @@ public class SheepFoxGeneratorScript : MonoBehaviour
         fox.transform.position = gameObject.transform.position;
     }
 }
+
+
