@@ -26,6 +26,7 @@ public class ResourcesManager : TickObjectMonoBehaviour
 //    [SerializeField] private TextMeshProUGUI huntersCountTxt;
     
     [SerializeField] private int numOfHuntersToDiePerMinute;//the number of the hunters are gonna die starving  per minute.
+    [SerializeField] private int setlerMeatCost;
 
     private bool hasToKillHunters;
     private bool waskillerCalled;
@@ -82,7 +83,23 @@ public class ResourcesManager : TickObjectMonoBehaviour
         idleSettlersCount -= count;
         
         return true;
+    }
     
+<<<<<<< HEAD
+    public void AddSettler()
+    {
+        if (meatCount >= setlerMeatCost)
+        {
+            print("settler Added");
+            idleSettlersCount++;
+            EatFood(setlerMeatCost);
+        }
+        
+    }
+
+=======
+    public void GainSettlers(int count){
+        idleSettlersCount += count;
     }
     
     public void GainSettlers(int count){
@@ -93,7 +110,8 @@ public class ResourcesManager : TickObjectMonoBehaviour
     // Returns true if operation was successful.
     // </summary>
     public bool SpendWool(int woolToSpend)
-    {   
+    {
+        print(woolToSpend + "  " + woolCount);
         if(woolCount < woolToSpend) return false;
     
         woolCount -= woolToSpend;

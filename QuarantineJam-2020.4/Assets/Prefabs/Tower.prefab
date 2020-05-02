@@ -384,13 +384,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpotUnderTower: {fileID: 0}
-  NumOfHuntersInTheTower: 0
   towerMenu: {fileID: 1624415871}
   huntersInTower: 0
-  maxNumOfHunters: 3
-  woolToUpgrade: 0
-  meatEatenPerHunterPerTick: 0
-  initialUpgradeCost: 5
+  meatEatenPerHunterPerTick: 1
+  initialUpgradeCost: 2
   hunterCountTxt: {fileID: 8254707691805030214}
 --- !u!1001 &124561880831058846
 PrefabInstance:
@@ -754,6 +751,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75f30dee0a2a46b4ca3df6b2fc19ea31, type: 3}
+--- !u!4 &282344976 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5286126820640961722, guid: 75f30dee0a2a46b4ca3df6b2fc19ea31,
+    type: 3}
+  m_PrefabInstance: {fileID: 5286126820359146154}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &282344974 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5286126820640961700, guid: 75f30dee0a2a46b4ca3df6b2fc19ea31,
@@ -766,12 +769,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d3636569b815c44a9da8a846585046d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &282344976 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5286126820640961722, guid: 75f30dee0a2a46b4ca3df6b2fc19ea31,
-    type: 3}
-  m_PrefabInstance: {fileID: 5286126820359146154}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5825341951744896159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -909,15 +906,15 @@ PrefabInstance:
       objectReference: {fileID: 193421916}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b9ed538a81a1e347a1c86e8b28148ef, type: 3}
---- !u!224 &1624415872 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5825341952270135839, guid: 0b9ed538a81a1e347a1c86e8b28148ef,
-    type: 3}
-  m_PrefabInstance: {fileID: 5825341951744896159}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1624415871 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5825341952270136032, guid: 0b9ed538a81a1e347a1c86e8b28148ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 5825341951744896159}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1624415872 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5825341952270135839, guid: 0b9ed538a81a1e347a1c86e8b28148ef,
     type: 3}
   m_PrefabInstance: {fileID: 5825341951744896159}
   m_PrefabAsset: {fileID: 0}
