@@ -52,6 +52,8 @@ public class Tower : TickObjectMonoBehaviour
             maxHunterLimit += currentUpgradeCost;
             
             currentUpgradeCost *= 2;
+            
+            AudioManager.Instance.PlayUpgradeTowerAudio();
         }
         
 //        if (NumOfHuntersInTheTower < maxNumOfHunters && resourcesManager.numOfResources >= woolToUpgrade)
@@ -60,7 +62,7 @@ public class Tower : TickObjectMonoBehaviour
 //            hunters[NumOfHuntersInTheTower - 1].SetActive(true);
 ////            resourcesManager.CreatedHunters.Add(hunters[NumOfHuntersInTheTower - 1]);
 ////            EventsSystem.OnUpdateResourcesCount(-woolToUpgrade);
-//            audioManager.PlayUpgradeTowerAudio();
+//            
 //        }
     }
     
@@ -101,12 +103,7 @@ public class Tower : TickObjectMonoBehaviour
     
         //Hunter's Lunchtime.
         int huntersCount = huntersInTower;
-        for(int i = 0; i < huntersCount ; i++)//Serve every hunter.
-        
-            if(!ResourcesManager.Instance.EatFood(meatEatenPerHunterPerTick))
-            
-                huntersInTower -= 1;//remove hunter if food did not suffice.
-            
+        ResourcesManager.Instance.EatFoodCumulative(huntersInTower, meatEatenPerHunterPerTick, out huntersInTower)
     }
     
 //    public IEnumerator ConsumeResources()
