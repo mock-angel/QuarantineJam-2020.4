@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using TMPro;
+
 public class SheepFarm : TickObjectMonoBehaviour
 {
     public bool sheepFarmBought;
@@ -19,10 +21,16 @@ public class SheepFarm : TickObjectMonoBehaviour
     public static SheepFarm Instance {get; private set;}
     
     [Space(5)]
-    public int maxSheepLimit;//Max number of sheeps in Farm. Can be upgraded.
-    public int sheepsInFarm;//Number of sheeps currently in Farm.
+    public int maxSheepLimit; //Max number of sheeps in Farm. Can be upgraded.
+    public int sheepsInFarm; //Number of sheeps currently in Farm.
     public int shepherdsInFarm;
     
+    [Space(5)]
+    public TextMeshProUGUI maxSheepLimitTxt;
+    public TextMeshProUGUI sheepsInFarmTxt;
+    public TextMeshProUGUI shepherdsInFarmTxt;
+    
+    [Space(5)]
     [Range(0, 5)]
     public int woolPerShepherdPerTick = 1;
     
@@ -31,6 +39,13 @@ public class SheepFarm : TickObjectMonoBehaviour
         
         currentUpgradeCost = initialUpgradeCost;
         
+    }
+    
+    void Update(){
+        //Update UI text.
+        maxSheepLimitTxt.text = maxSheepLimit.ToString();
+        sheepsInFarmTxt.text = sheepsInFarm.ToString();
+        shepherdsInFarmTxt.text = shepherdsInFarm.ToString();
     }
     
     public void OnClickedBuy(){
@@ -53,11 +68,7 @@ public class SheepFarm : TickObjectMonoBehaviour
     
     public void OnClickedUpgrade(){
     
-        int woolCount = 100;
-        
-        if(currentUpgradeCost <= woolCount){
-            woolCount -= currentUpgradeCost;
-            
+        if(ResourcesManager.Instance.SpendWool(currentUpgradeCost)){
             maxSheepLimit += currentUpgradeCost ;
             
             currentUpgradeCost *= 2;//Upgrade cost doubles.
