@@ -14,7 +14,7 @@ public class SheepFarm : TickObjectMonoBehaviour
     
     [Space(5)]
     public GameObject buyButton;
-    public GameObject upgradeButton;
+    public GameObject AfterBuyPanel;
     
     public static SheepFarm Instance {get; private set;}
     
@@ -48,7 +48,7 @@ public class SheepFarm : TickObjectMonoBehaviour
         
         //Remove buy button and replace with upgrade button.
         buyButton.SetActive(false);
-        upgradeButton.SetActive(true);
+        AfterBuyPanel.SetActive(true);
     }
     
     public void OnClickedUpgrade(){
