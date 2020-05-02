@@ -5,10 +5,10 @@ using UnityEngine;
 
 public static class EventsSystem
 {
-    public static event Action<float> onUpdateResourcesCount;
+    public static event Action onUpdateResourcesCount;
 
-    public static void OnUpdateResourcesCount(float resourcesToAdd)
+    public static void OnUpdateResourcesCount()
     {
-        onUpdateResourcesCount(resourcesToAdd);
+        onUpdateResourcesCount();
     }
 }

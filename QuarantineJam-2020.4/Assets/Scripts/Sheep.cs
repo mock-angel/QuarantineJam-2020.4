@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sheep : MonoBehaviour
 {
-    [HideInInspector] public bool isItInTheFarm;
+    [HideInInspector] public bool IsItInTheFarm;
 
     [SerializeField] private int helthNumber;//how many times should we hit the sheep to hunt
     [SerializeField] private int foodAfterHunt = 3;//number of the recorces that you gonna git if you hunted the sheep;
@@ -14,7 +14,7 @@ public class Sheep : MonoBehaviour
 
     private void Start()
     {
-        isItInTheFarm = false;
+        IsItInTheFarm = false;
         hitsTakenCounter = 0;
         animator = GetComponent<Animator>();
     }
@@ -51,7 +51,7 @@ public class Sheep : MonoBehaviour
         }
         else if (collision.tag == "Farm")
         {
-            isItInTheFarm = true;
+            IsItInTheFarm = true;
             SheepFarm.Instance.AddSheep();
 //            StartCoroutine(PreduceRecources());
         }
@@ -61,7 +61,7 @@ public class Sheep : MonoBehaviour
     {
         if (collision.tag == "Farm")
         {
-            isItInTheFarm = false;
+            IsItInTheFarm = false;
 //            StopCoroutine(PreduceRecources());
         }
     }

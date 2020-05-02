@@ -53,6 +53,7 @@ public class Tower : TickObjectMonoBehaviour
             huntersInTower++;
             AudioManager.Instance.PlayUpgradeTowerAudio();
             hunterImage.SetActive(true);
+            EventsSystem.OnUpdateResourcesCount();
         }
         
 //        if (NumOfHuntersInTheTower < maxNumOfHunters && resourcesManager.numOfResources >= woolToUpgrade)
@@ -111,7 +112,6 @@ public class Tower : TickObjectMonoBehaviour
     
         //Hunter's Lunchtime.
         int huntersCount = huntersInTower;
-        print(huntersCount + " huntCount " + huntersInTower + " huntInTower");
         ResourcesManager.Instance.EatFoodCumulative(huntersInTower, meatEatenPerHunterPerTick, out huntersInTower);
         if (huntersInTower <= 0)
         {
@@ -120,18 +120,7 @@ public class Tower : TickObjectMonoBehaviour
         if (huntersInTower < huntersCount)
         {
             DowngradeTower(Mathf.Clamp(huntersCount - huntersInTower, 0, maxHunterLimit));
-            print(huntersCount + " huntCount " + huntersInTower + " huntInTower");
             huntersCount = huntersInTower;
-            print(huntersCount + " huntCount " + huntersInTower + " huntInTower");
         }
     }
-    
-//    public IEnumerator ConsumeResources()
-//    {
-//        while (this != null)
-//        {
-//            yield return new WaitForSeconds(60 / (numOfResourcesConsumedByHunterPerMinute * NumOfHuntersInTheTower));
-//            EventsSystem.OnUpdateResourcesCount(-1);
-//        }
-//    }
 }

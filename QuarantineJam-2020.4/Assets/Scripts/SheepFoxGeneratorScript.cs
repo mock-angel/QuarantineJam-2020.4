@@ -29,7 +29,7 @@ public class SheepFoxGeneratorScript : MonoBehaviour
     void Update()
     {   
         if(nextSheepSpawnTime <= Time.time){
-            nextSheepSpawnTime += spawnSheepTime;
+            nextSheepSpawnTime = Time.time + spawnSheepTime;
             
             //spawn sheep now.
             CreateSheep();
@@ -37,7 +37,7 @@ public class SheepFoxGeneratorScript : MonoBehaviour
         
         //If spawnFox is true, spawn fox.
         if(spawnFox && nextFoxSpawnTime <= Time.time){
-            nextFoxSpawnTime += foxSpawnTime;
+            nextFoxSpawnTime = Time.time + foxSpawnTime;
             
             CreateFox();
         }

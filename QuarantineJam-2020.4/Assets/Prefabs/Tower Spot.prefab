@@ -125,5 +125,5 @@ MonoBehaviour:
     type: 3}
   positionOffset: {x: 0.05, y: 0.3, z: 0}
   resourcesManager: {fileID: 0}
-  numOfResourcesNeededToCreat: 5
+  numOfWoolNeededToCreat: 3
   audioManager: {fileID: 0}

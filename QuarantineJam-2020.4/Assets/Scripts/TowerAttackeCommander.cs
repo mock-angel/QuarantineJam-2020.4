@@ -120,14 +120,14 @@ public class TowerAttackeCommander : MonoBehaviour
             print(tower.huntersInTower);
             if (target != null && tower.huntersInTower > 0)
             {
-                if (target.tag == "WantedAnimal" && !target.GetComponent<Sheep>().isItInTheFarm)
+                if (target.tag == "WantedAnimal" && !target.GetComponent<Sheep>().IsItInTheFarm)
                 {
                     Transform weaponObj = Instantiate(weaponPrefab, weaponPosition.position, weaponPrefab.rotation);
                     Weapon weapon = weaponObj.GetComponent<Weapon>();
                     weapon.damageValue = tower.huntersInTower;
                     weapon.target = this.target;
                 }
-                else if (target.tag == "NotWantedAnimal" && !target.GetComponent<Sheep>().isItInTheFarm)
+                else if (target.tag == "NotWantedAnimal" && !target.GetComponent<Fox>().IsItInTheFarm)
                 {
                     Transform weaponObj = Instantiate(weaponPrefab, weaponPosition.position, weaponPrefab.rotation);
                     Weapon weapon = weaponObj.GetComponent<Weapon>();

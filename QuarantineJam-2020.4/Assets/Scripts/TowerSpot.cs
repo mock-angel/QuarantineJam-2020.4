@@ -7,7 +7,7 @@ public class TowerSpot : MonoBehaviour
     [SerializeField] private GameObject towerPrefab;//the tower that we want to creat in this spot position
     [SerializeField] private Vector3 positionOffset;
     [SerializeField] private ResourcesManager resourcesManager;
-    [SerializeField] private float numOfResourcesNeededToCreat;
+    [SerializeField] private int numOfWoolNeededToCreat;
     [SerializeField] private AudioManager audioManager;
 
     private SpriteRenderer spriteRenderer;
@@ -27,14 +27,14 @@ public class TowerSpot : MonoBehaviour
 
     public void OnSelected()
     {
-        if (resourcesManager.numOfResources >= numOfResourcesNeededToCreat)
+        if (resourcesManager.SpendWool(numOfWoolNeededToCreat))
         {
             gameObject.SetActive(false);
             GameObject towerObj = Instantiate(towerPrefab, transform.position + positionOffset, towerPrefab.transform.rotation);
             Tower tower = towerObj.GetComponent<Tower>();
             tower.SpotUnderTower = this;
-            EventsSystem.OnUpdateResourcesCount(-numOfResourcesNeededToCreat);
             audioManager.PlayBuildTowerAudio();
+            EventsSystem.OnUpdateResourcesCount();
         }
     }
     
@@ -43,9 +43,9 @@ public class TowerSpot : MonoBehaviour
         //print("TowerSpot.OnDeSelected() called");
     }
 
-    public void ChickForCreatAbility(float notNeeded)
+    public void ChickForCreatAbility()
     {
-        if (resourcesManager.numOfResources < numOfResourcesNeededToCreat)
+        if (resourcesManager.woolCount < numOfWoolNeededToCreat)
         {
             spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, .35f);
         }

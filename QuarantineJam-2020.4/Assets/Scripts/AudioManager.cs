@@ -10,8 +10,8 @@ public class AudioManager : MonoBehaviour
     
     [SerializeField] private Sprite playMusicSprite;
     [SerializeField] private Sprite muteMusicSprite;
-    [SerializeField] private Image startSceneMusicImage;
-    [SerializeField] private Image battelSceneMusicImage;
+    //[SerializeField] private Image startSceneMusicImage;
+    [SerializeField] private Image musicBtnImage;
     [SerializeField] private int maxNumberOfSounds;
     [Header("Audio Sources")]
     [SerializeField]
@@ -101,7 +101,7 @@ public class AudioManager : MonoBehaviour
         isSoundsMuted = false;
         numbOfPlayingSounds = 0;
         PlayMainMusic();
-        PlayNatureMusic();
+        //PlayNatureMusic();
     }
 
     private void Start()
@@ -110,164 +110,144 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMainMusic()
     {
-        if (!isMusicMuted)
-        {
-            isMusicMuted = false;
-            IsSoundsMuted = false;
-            audioSourceMusic.clip = soundInfo.mainMusicClip;
-            audioSourceMusic.loop = true;
-            audioSourceMusic.Play();
-            isMainMusicPlaying = true;
-            isStartMusicPlaying = false;
-        }
-        else
-        {
-            audioSourceMusic.clip = soundInfo.mainMusicClip;
-            audioSourceMusic.loop = true;
-            audioSourceMusic.Pause();
-        }
+        isMusicMuted = false;
+        IsSoundsMuted = false;
+        audioSourceMusic.clip = soundInfo.mainMusicClip;
+        audioSourceMusic.loop = true;
+        audioSourceMusic.Play();
+
+        isMusicMuted = false;
+        IsSoundsMuted = false;
+        audioSourceNatureMusic.clip = soundInfo.natureMusicClip;
+        audioSourceNatureMusic.loop = true;
+        audioSourceNatureMusic.Play();
+
+        musicBtnImage.sprite = muteMusicSprite;
     }
 
-    public void UnMuteMainMusic()
-    {
-        if (!isMusicMuted)
-        {
-            isMusicMuted = false;
-            IsSoundsMuted = false;
-            audioSourceMusic.clip = soundInfo.mainMusicClip;
-            isMainMusicPlaying = true;
-            isStartMusicPlaying = false;
-            startSceneMusicImage.sprite = playMusicSprite;
-            battelSceneMusicImage.sprite = playMusicSprite;
-            if (audioSourceMusic.isPlaying)
-            {
-                audioSourceMusic.UnPause();
-            }
-            else
-            {
-                audioSourceMusic.Play();
-            }
-        }
-    }
+    //public void UnMuteMainMusic()
+    //{
+    //    if (!isMusicMuted)
+    //    {
+    //        isMusicMuted = false;
+    //        IsSoundsMuted = false;
+    //        audioSourceMusic.clip = soundInfo.mainMusicClip;
+    //        isMainMusicPlaying = true;
+    //        isStartMusicPlaying = false;
+    //        //startSceneMusicImage.sprite = playMusicSprite;
+    //        //battelSceneMusicImage.sprite = playMusicSprite;
+    //        if (audioSourceMusic.isPlaying)
+    //        {
+    //            audioSourceMusic.UnPause();
+    //        }
+    //        else
+    //        {
+    //            audioSourceMusic.Play();
+    //        }
+    //    }
+    //}
 
-    public void PlayNatureMusic()
-    {
-        if (!isMusicMuted)
-        {
-            isMusicMuted = false;
-            IsSoundsMuted = false;
-            audioSourceNatureMusic.clip = soundInfo.natureMusicClip;
-            audioSourceNatureMusic.loop = true;
-            audioSourceNatureMusic.Play();
-            isMainMusicPlaying = false;
-            isStartMusicPlaying = true;
-            //startSceneMusicImage.sprite = playMusicSprite;
-            //battelSceneMusicImage.sprite = playMusicSprite;
-        }
-        else
-        {
-            audioSourceNatureMusic.clip = soundInfo.natureMusicClip;
-            audioSourceNatureMusic.loop = true;
-            audioSourceNatureMusic.Pause();
-        }
-    }
+    //public void PlayNatureMusic()
+    //{
+    //    isMusicMuted = false;
+    //    IsSoundsMuted = false;
+    //    audioSourceNatureMusic.clip = soundInfo.natureMusicClip;
+    //    audioSourceNatureMusic.loop = true;
+    //    audioSourceNatureMusic.Play();
 
-    public void UnMuteStartMusic()
-    {
-        if (!isMusicMuted)
-        {
-            isMusicMuted = false;
-            IsSoundsMuted = false;
-            audioSourceMusic.clip = soundInfo.natureMusicClip;
-            isMainMusicPlaying = false;
-            isStartMusicPlaying = true;
-            startSceneMusicImage.sprite = playMusicSprite;
-            battelSceneMusicImage.sprite = playMusicSprite;
+    //    //startSceneMusicImage.sprite = playMusicSprite;
+        
+    //    musicBtnImage.sprite = muteMusicSprite;
+    //}
 
-            if (audioSourceMusic.isPlaying)
-            {
-                audioSourceMusic.UnPause();
-            }
-            else
-            {
-                audioSourceMusic.Play();
-            }
-            //SaveFiles.SetStringPlayerPref("IsMusicMuted", isMusicMuted.ToString());//save the current music state
-        }
-    }
+    //public void UnMuteStartMusic()
+    //{
+    //    if (!isMusicMuted)
+    //    {
+    //        isMusicMuted = false;
+    //        IsSoundsMuted = false;
+    //        audioSourceMusic.clip = soundInfo.natureMusicClip;
+    //        isMainMusicPlaying = false;
+    //        isStartMusicPlaying = true;
+    //        //startSceneMusicImage.sprite = playMusicSprite;
+    //        //battelSceneMusicImage.sprite = playMusicSprite;
+
+    //        if (audioSourceMusic.isPlaying)
+    //        {
+    //            audioSourceMusic.UnPause();
+    //        }
+    //        else
+    //        {
+    //            audioSourceMusic.Play();
+    //        }
+    //        //SaveFiles.SetStringPlayerPref("IsMusicMuted", isMusicMuted.ToString());//save the current music state
+    //    }
+    //}
 
 
-    public void MuteStartMusic()
-    {
-        isMusicMuted = true;
-        IsSoundsMuted = true;
-        audioSourceMusic.Pause();
-        isStartMusicPlaying = false;
-        //SaveFiles.SetStringPlayerPref("IsMusicMuted", isMusicMuted.ToString());//save the current music state
-    }
+    //public void MuteStartMusic()
+    //{
+    //    isMusicMuted = true;
+    //    IsSoundsMuted = true;
+    //    audioSourceMusic.Pause();
+
+    //    musicBtnImage.sprite = playMusicSprite;
+    //    //SaveFiles.SetStringPlayerPref("IsMusicMuted", isMusicMuted.ToString());//save the current music state
+    //}
 
     public void MuteMainMusic()
     {
         isMusicMuted = true;
         IsSoundsMuted = true;
         audioSourceMusic.Pause();
-        isMainMusicPlaying = false;
+
+        isMusicMuted = true;
+        IsSoundsMuted = true;
+        audioSourceNatureMusic.Pause();
+
+        musicBtnImage.sprite = playMusicSprite;
         //SaveFiles.SetStringPlayerPref("IsMusicMuted", isMusicMuted.ToString());//save the current music state
     }
 
-    public void StopStartMusic()
-    {
-        isMusicMuted = true;
-        IsSoundsMuted = true;
-        audioSourceMusic.Stop();
-        isStartMusicPlaying = true;
-        //SaveFiles.SetStringPlayerPref("IsMusicMuted", isMusicMuted.ToString());//save the current music state
-    }
+    //public void StopStartMusic()
+    //{
+    //    isMusicMuted = true;
+    //    IsSoundsMuted = true;
+    //    audioSourceMusic.Stop();
+    //    isStartMusicPlaying = true;
+    //    //SaveFiles.SetStringPlayerPref("IsMusicMuted", isMusicMuted.ToString());//save the current music state
+    //}
 
 
 /// <param name="hasToMute">set to false if you want to stop the main music withour muting the all sounds</param>
-    public void StopMainMusic(bool hasToMute = true)
-    {
-        if (hasToMute)
-        {
-            isMusicMuted = true;
-            IsSoundsMuted = true;
-        }
+    //public void StopMainMusic(bool hasToMute = true)
+    //{
+    //    if (hasToMute)
+    //    {
+    //        isMusicMuted = true;
+    //        IsSoundsMuted = true;
+    //    }
         
-        audioSourceMusic.Stop();
-        isMainMusicPlaying = false;
-        startSceneMusicImage.sprite = muteMusicSprite;
-        battelSceneMusicImage.sprite = muteMusicSprite;
-        //SaveFiles.SetStringPlayerPref("IsMusicMuted", isMusicMuted.ToString());//save the current music state
-    }
+    //    audioSourceMusic.Stop();
+    //    isMainMusicPlaying = false;
+    //    //startSceneMusicImage.sprite = muteMusicSprite;
+    //    //battelSceneMusicImage.sprite = muteMusicSprite;
+    //    //SaveFiles.SetStringPlayerPref("IsMusicMuted", isMusicMuted.ToString());//save the current music state
+    //}
 
     public void UpdateMusicState()
     {
+        print(isMainMusicPlaying);
         if (isMusicMuted)
         {
-            isMusicMuted = false;
-            isSoundsMuted = false;
-            //if (wavesManager.HasToStartGame)
-            //{
-            //    UnMuteMainMusic();
-            //}
-            //else if (!wavesManager.HasToStartGame)
-            //{
-            //    UnMuteStartMusic();
-            //}
+            PlayMainMusic();
+
+            //PlayNatureMusic();
         }
         else
         {
-            startSceneMusicImage.sprite = muteMusicSprite;
-            battelSceneMusicImage.sprite = muteMusicSprite;
-            if (isMainMusicPlaying)
-            {
-                MuteMainMusic();
-            }
-            else if (isStartMusicPlaying)
-            {
-                MuteStartMusic();
-            }
+            //MuteStartMusic();
+            MuteMainMusic();
         }
     }
 
