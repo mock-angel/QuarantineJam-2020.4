@@ -27,7 +27,7 @@ public class TowerAttackeCommander : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(tower.huntersInTower);
+        //print(tower.huntersInTower);
     }
 
     public void SetTarget(bool hasToTargetWantedAnimal)//if true then target the WantedAnimal else target the NotWantedAnimal
