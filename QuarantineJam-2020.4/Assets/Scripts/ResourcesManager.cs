@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 
-public class ResourcesManager : MonoBehaviour
+public class ResourcesManager : TickObjectMonoBehaviour
 {
     
     public static ResourcesManager Instance {get; private set;}
@@ -34,8 +34,8 @@ public class ResourcesManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        
-        EventsSystem.onUpdateResourcesCount += UpdateResourcesNumber;
+        TickManager.Instance.AddITickObject((ITickObject)this);
+//        EventsSystem.onUpdateResourcesCount += UpdateResourcesNumber;
     }
     
     void Start()
@@ -53,30 +53,6 @@ public class ResourcesManager : MonoBehaviour
         idleSettlersCountTxt.text = idleSettlersCount.ToString();
     }
 
-    public void UpdateResourcesNumber(float resourcesToAdd)
-    {
-        numOfResources = Mathf.Clamp(numOfResources + resourcesToAdd, 0, 500);
-        resourcesCountTxt.text = numOfResources.ToString();
-//        if (numOfResources <= 0)
-//        {
-//            hasToKillHunters = true;
-//            if (!waskillerCalled)
-//            {
-//                waskillerCalled = true;
-//                StartCoroutine(KillHunters());
-//            }
-//            
-//        }
-//        else
-//        {
-//            hasToKillHunters = false;
-//            StopCoroutine(KillHunters());
-//            waskillerCalled = false;
-//        }
-        
-    }
-    
-    
     public void EarnFood(int foodToAdd){
         meatCount += foodToAdd;
     }
@@ -110,6 +86,10 @@ public class ResourcesManager : MonoBehaviour
     
     }
     
+    public void GainSettlers(int count){
+        idleSettlersCount += count;
+    }
+    
     // <summary>
     // Returns true if operation was successful.
     // </summary>
@@ -122,11 +102,26 @@ public class ResourcesManager : MonoBehaviour
         return true;
         
     }
-    
-    private void OnDestroy()
-    {
-        EventsSystem.onUpdateResourcesCount -= UpdateResourcesNumber;
+    public override void OnTick(){
+        EatFoodCumulative(idleSettlersCount, 1, out idleSettlersCount);
     }
+    
+    // <summary>
+    // If u have 100 workers(unitCount), and u want every unit to get certain 
+    // amount of food(foodPerUnit), this function will output to out param
+    // (unitSurvived) the remaining units that survived attrition.
+    // </summary>
+    public void EatFoodCumulative(int unitCount, int foodPerUnit, out int unitSurvived){
+        int c = unitCount;
+        unitSurvived = unitCount;
+        for(int i = 0; i < c; i++) if(!ResourcesManager.Instance.EatFood(foodPerUnit)) unitSurvived -= 1;
+    }
+    
+    
+//    private void OnDestroy()
+//    {
+//        EventsSystem.onUpdateResourcesCount -= UpdateResourcesNumber;
+//    }
 
 //    public IEnumerator KillHunters()
 //    {

@@ -2,15 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TickObjectMonoBehaviour : MonoBehaviour, ITickObject
+public abstract class TickObjectMonoBehaviour : MonoBehaviour, ITickObject
 {
-    void Awake()
-    {
-        TickManager.Instance.AddITickObject((ITickObject)this);
-    }
-
-    public virtual void OnTick()
-    {
-    
-    }
+    public abstract void OnTick();
 }

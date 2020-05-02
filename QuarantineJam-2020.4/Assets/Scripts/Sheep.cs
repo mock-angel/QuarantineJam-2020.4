@@ -52,6 +52,7 @@ public class Sheep : MonoBehaviour
         else if (collision.tag == "Farm")
         {
             isItInTheFarm = true;
+            SheepFarm.Instance.AddSheep();
 //            StartCoroutine(PreduceRecources());
         }
     }
@@ -61,7 +62,6 @@ public class Sheep : MonoBehaviour
         if (collision.tag == "Farm")
         {
             isItInTheFarm = false;
-            SheepFarm.Instance.AddSheep();
 //            StopCoroutine(PreduceRecources());
         }
     }

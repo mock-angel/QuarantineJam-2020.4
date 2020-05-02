@@ -23,6 +23,10 @@ public class Tower : TickObjectMonoBehaviour
    
     public TextMeshProUGUI hunterCountTxt;
     
+    void Awake(){
+        TickManager.Instance.AddITickObject((ITickObject)this);
+    }
+    
     void Start()
     {
         NumOfHuntersInTheTower = 1;

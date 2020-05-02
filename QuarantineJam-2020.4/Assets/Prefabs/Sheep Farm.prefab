@@ -246,7 +246,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9000990696982421841}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 534944971149671756}
+        m_MethodName: OnClickedAddShepherd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1177645857257978905
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,8 +354,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sheepFarmBought: 0
-  initialPurchaseCost: 0
-  initialUpgradeCost: 0
+  initialPurchaseCost: 50
+  initialUpgradeCost: 5
   buyButton: {fileID: 6615376407297772885}
   AfterBuyPanel: {fileID: 4246324792832531973}
   maxSheepLimit: 0
@@ -354,6 +365,7 @@ MonoBehaviour:
   sheepsInFarmTxt: {fileID: 6299482456412277516}
   shepherdsInFarmTxt: {fileID: 7032268702314025537}
   woolPerShepherdPerTick: 1
+  addShepherdCountPerAdd: 1
 --- !u!1 &2088298299339940169
 GameObject:
   m_ObjectHideFlags: 0
