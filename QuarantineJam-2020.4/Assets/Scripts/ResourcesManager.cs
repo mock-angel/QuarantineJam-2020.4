@@ -26,7 +26,6 @@ public class ResourcesManager : TickObjectMonoBehaviour
 //    [SerializeField] private TextMeshProUGUI huntersCountTxt;
     
     [SerializeField] private int numOfHuntersToDiePerMinute;//the number of the hunters are gonna die starving  per minute.
-    [SerializeField] private AudioManager audioManager;
 
     private bool hasToKillHunters;
     private bool waskillerCalled;
@@ -103,7 +102,11 @@ public class ResourcesManager : TickObjectMonoBehaviour
         
     }
     public override void OnTick(){
+        int c = idleSettlersCount;
+        
         EatFoodCumulative(idleSettlersCount, 1, out idleSettlersCount);
+        
+        if(c > idleSettlersCount) AudioManager.Instance.PlayHunterDiedAudio();
     }
     
     // <summary>
