@@ -2335,6 +2335,16 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 534944971149671756, guid: 4f00a072571181a16919be06de1f01c2,
+        type: 3}
+      propertyPath: initialPurchaseCost
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 534944971149671756, guid: 4f00a072571181a16919be06de1f01c2,
+        type: 3}
+      propertyPath: initialUpgradeCost
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1177645857257978905, guid: 4f00a072571181a16919be06de1f01c2,
         type: 3}
       propertyPath: m_Name

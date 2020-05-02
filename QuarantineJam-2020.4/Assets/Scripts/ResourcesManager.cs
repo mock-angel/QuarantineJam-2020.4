@@ -53,30 +53,6 @@ public class ResourcesManager : MonoBehaviour
         idleSettlersCountTxt.text = idleSettlersCount.ToString();
     }
 
-    public void UpdateResourcesNumber(float resourcesToAdd)
-    {
-        numOfResources = Mathf.Clamp(numOfResources + resourcesToAdd, 0, 500);
-        resourcesCountTxt.text = numOfResources.ToString();
-//        if (numOfResources <= 0)
-//        {
-//            hasToKillHunters = true;
-//            if (!waskillerCalled)
-//            {
-//                waskillerCalled = true;
-//                StartCoroutine(KillHunters());
-//            }
-//            
-//        }
-//        else
-//        {
-//            hasToKillHunters = false;
-//            StopCoroutine(KillHunters());
-//            waskillerCalled = false;
-//        }
-        
-    }
-    
-    
     public void EarnFood(int foodToAdd){
         meatCount += foodToAdd;
     }

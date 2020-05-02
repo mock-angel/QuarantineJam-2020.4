@@ -343,8 +343,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sheepFarmBought: 0
-  initialPurchaseCost: 0
-  initialUpgradeCost: 0
+  initialPurchaseCost: 50
+  initialUpgradeCost: 5
   buyButton: {fileID: 6615376407297772885}
   AfterBuyPanel: {fileID: 4246324792832531973}
   maxSheepLimit: 0

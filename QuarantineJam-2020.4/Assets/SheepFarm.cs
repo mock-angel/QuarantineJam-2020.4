@@ -10,8 +10,8 @@ public class SheepFarm : TickObjectMonoBehaviour
     public bool sheepFarmBought;
     
     [Space(5)]
-    public int initialPurchaseCost;
-    public int initialUpgradeCost;
+    public int initialPurchaseCost = 50;
+    public int initialUpgradeCost = 5;
     
     private int currentUpgradeCost;
     
@@ -33,6 +33,8 @@ public class SheepFarm : TickObjectMonoBehaviour
     [Range(0, 5)]
     public int woolPerShepherdPerTick = 1;
     
+    public int addShepherdCountPerAdd = 1;
+    
     public static SheepFarm Instance {get; private set;}
     
     void Awake(){
@@ -40,7 +42,9 @@ public class SheepFarm : TickObjectMonoBehaviour
     }
     
     void Start(){
+        
         currentUpgradeCost = initialUpgradeCost;
+        
     }
     
     void Update(){
@@ -51,18 +55,17 @@ public class SheepFarm : TickObjectMonoBehaviour
     }
     
     public void OnClickedBuy(){
-        
-        int temp = 100;//Replace with amount of wool.
-        if(initialPurchaseCost <= temp){
-            temp -= initialPurchaseCost;
+        if(ResourcesManager.Instance.EatFood(initialPurchaseCost))
             
             OnBuy();
-        }
+            
     }
     
     void OnBuy(){
-        sheepFarmBought = true;
+        maxSheepLimit = 5;
         
+        sheepFarmBought = true;
+        print("Farm bought.");
         //Remove buy button and replace with upgrade button.
         buyButton.SetActive(false);
         AfterBuyPanel.SetActive(true);
@@ -71,6 +74,7 @@ public class SheepFarm : TickObjectMonoBehaviour
     public void OnClickedUpgrade(){
     
         if(ResourcesManager.Instance.SpendWool(currentUpgradeCost)){
+            print("Farm upgrading.");
             maxSheepLimit += currentUpgradeCost ;
             
             currentUpgradeCost *= 2;//Upgrade cost doubles.
@@ -87,6 +91,13 @@ public class SheepFarm : TickObjectMonoBehaviour
         
     }
     
+    public void OnClickedAddShepherd(){
+        if(ResourcesManager.Instance.GetSettler(addShepherdCountPerAdd))
+        
+            shepherdsInFarm += addShepherdCountPerAdd;
+        
+    }
+    
     public override void OnTick(){
         
         //Calculate amount of wool Gained this turn.
@@ -95,6 +106,8 @@ public class SheepFarm : TickObjectMonoBehaviour
         if( shepherdsInFarm >= sheepsInFarm ) woolGainThisTurn = sheepsInFarm * woolPerShepherdPerTick;
         
         else woolGainThisTurn = shepherdsInFarm * woolPerShepherdPerTick;
+        
+        ResourcesManager.Instance.EarnWool(woolGainThisTurn);
         
         //Calculate loss of cattle this turn.
         int sheepLostThisTurn = 0;
