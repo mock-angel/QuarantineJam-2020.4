@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3414422012841356063}
   - component: {fileID: 3414422012841356062}
-  - component: {fileID: 3414422012841356060}
   m_Layer: 0
   m_Name: Hunter
   m_TagString: Untagged
@@ -82,22 +81,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3414422012841356060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3414422012841356049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bab3fb892788ed42936fcdbe9c4dfcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  foodConsumePerMinut: 5
-  weaponPrefab: {fileID: 8623450584911369740, guid: 30e3ecfb661dd9a46bf9cb69385ba834,
-    type: 3}
-  numOfArrowsPerMinute: 10
-  weaponPosition: {fileID: 7097673360707516114, guid: 6503b46b9eaa254499eef3ddab7b6d9c,
-    type: 3}

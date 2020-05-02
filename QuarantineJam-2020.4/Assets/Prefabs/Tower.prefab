@@ -137,7 +137,6 @@ MonoBehaviour:
   maxNumOfHunters: 3
   numOfResourcesNeededToUpgrade: 5
   numOfResourcesConsumedByHunterPerMinute: 10
-  audioManager: {fileID: 0}
 --- !u!1001 &124561880831058846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,7 +224,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.25
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3414422012841356060, guid: aa03d4b8799dd2949917b9ab464a703f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aa03d4b8799dd2949917b9ab464a703f, type: 3}
 --- !u!1 &3375728176319924367 stripped
 GameObject:
@@ -326,7 +326,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.25
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3414422012841356060, guid: aa03d4b8799dd2949917b9ab464a703f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aa03d4b8799dd2949917b9ab464a703f, type: 3}
 --- !u!1 &1874252135 stripped
 GameObject:
@@ -422,7 +423,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.25
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3414422012841356060, guid: aa03d4b8799dd2949917b9ab464a703f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aa03d4b8799dd2949917b9ab464a703f, type: 3}
 --- !u!1 &2231078938424511256 stripped
 GameObject:
