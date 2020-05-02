@@ -5,9 +5,8 @@ using UnityEngine;
 public class Sheep : MonoBehaviour
 {
 
-    [SerializeField] private float helthNumber;//how many times should we hit the sheep to hunt
-    [SerializeField] private float numOfRecorcesAfterHunt;//number of the recorces that you gonna git if you hunted the sheep;
-    [SerializeField] private float numOfRecorcesPreducePerMinute;//number of the recorces that the sheep is gonna preduce each minute in the farm
+    [SerializeField] private int helthNumber;//how many times should we hit the sheep to hunt
+    [SerializeField] private int foodAfterHunt = 3;//number of the recorces that you gonna git if you hunted the sheep;
     
     private bool isItInTheFarm;
     private Animator animator;
@@ -27,17 +26,17 @@ public class Sheep : MonoBehaviour
         animator.SetFloat("Rotation", transform.rotation.z);
     }
 
-    public IEnumerator PreduceRecources()
-    {
-        while (isItInTheFarm)
-        {
-            yield return new WaitForSeconds(60 / numOfRecorcesPreducePerMinute);
-            if (isItInTheFarm)
-            {
-                EventsSystem.OnUpdateResourcesCount(1);
-            }
-        }
-    }
+//    public IEnumerator PreduceRecources()
+//    {
+//        while (isItInTheFarm)
+//        {
+//            yield return new WaitForSeconds(60 / numOfRecorcesPreducePerMinute);
+//            if (isItInTheFarm)
+//            {
+//                EventsSystem.OnUpdateResourcesCount(1);
+//            }
+//        }
+//    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -46,14 +45,14 @@ public class Sheep : MonoBehaviour
             hitsTakenCounter++;
             if (hitsTakenCounter >= helthNumber)
             {
-                EventsSystem.OnUpdateResourcesCount(numOfRecorcesAfterHunt);
+                ResourcesManager.Instance.EarnFood(foodAfterHunt);
                 Destroy(gameObject);
             }
         }
         else if (collision.tag == "Farm")
         {
             isItInTheFarm = true;
-            StartCoroutine(PreduceRecources());
+//            StartCoroutine(PreduceRecources());
         }
     }
 
@@ -62,7 +61,8 @@ public class Sheep : MonoBehaviour
         if (collision.tag == "Farm")
         {
             isItInTheFarm = false;
-            StopCoroutine(PreduceRecources());
+            SheepFarm.Instance.AddSheep();
+//            StopCoroutine(PreduceRecources());
         }
     }
 }

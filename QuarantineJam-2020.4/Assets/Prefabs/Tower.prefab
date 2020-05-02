@@ -386,13 +386,12 @@ MonoBehaviour:
   SpotUnderTower: {fileID: 0}
   NumOfHuntersInTheTower: 0
   towerMenu: {fileID: 1624415871}
-  hunters:
-  - {fileID: 2231078938424511256}
-  - {fileID: 1874252135}
-  - {fileID: 3375728176319924367}
+  huntersInTower: 0
   maxNumOfHunters: 3
-  numOfResourcesNeededToUpgrade: 5
-  numOfResourcesConsumedByHunterPerMinute: 10
+  woolToUpgrade: 0
+  meatEatenPerHunterPerTick: 0
+  initialUpgradeCost: 5
+  hunterCountTxt: {fileID: 8254707691805030214}
 --- !u!1001 &124561880831058846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -486,12 +485,6 @@ PrefabInstance:
 --- !u!4 &3375728176319924353 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3414422012841356063, guid: aa03d4b8799dd2949917b9ab464a703f,
-    type: 3}
-  m_PrefabInstance: {fileID: 124561880831058846}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3375728176319924367 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3414422012841356049, guid: aa03d4b8799dd2949917b9ab464a703f,
     type: 3}
   m_PrefabInstance: {fileID: 124561880831058846}
   m_PrefabAsset: {fileID: 0}
@@ -591,12 +584,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3414422011338308214}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1874252135 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3414422012841356049, guid: aa03d4b8799dd2949917b9ab464a703f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3414422011338308214}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3572503235149750281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -685,12 +672,6 @@ PrefabInstance:
 --- !u!4 &2231078938424511254 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3414422012841356063, guid: aa03d4b8799dd2949917b9ab464a703f,
-    type: 3}
-  m_PrefabInstance: {fileID: 3572503235149750281}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2231078938424511256 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3414422012841356049, guid: aa03d4b8799dd2949917b9ab464a703f,
     type: 3}
   m_PrefabInstance: {fileID: 3572503235149750281}
   m_PrefabAsset: {fileID: 0}

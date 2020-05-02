@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.UI;
+
 public class TickManager : MonoBehaviour
 {
     public static TickManager Instance {get; private set;}
     
     private List<ITickObject> ITickObjectList;
+    
+    public Slider TickSlider;
     
     [Range(2f, 30f)]
     public float TickLength = 15f;
@@ -30,6 +34,8 @@ public class TickManager : MonoBehaviour
             
             ProcessTick();
         }
+        
+        TickSlider.value = 1f - (nextTickTime - Time.time)/TickLength;
     }
     
     public void AddITickObject(ITickObject obj){
