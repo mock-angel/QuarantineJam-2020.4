@@ -55,6 +55,7 @@ public class ResourcesManager : TickObjectMonoBehaviour
 
     public void EarnFood(int foodToAdd) {
         meatCount += foodToAdd;
+        EventsSystem.OnUpdateResourcesCount();
     }
 
     // <summary>
@@ -64,13 +65,14 @@ public class ResourcesManager : TickObjectMonoBehaviour
         if (meatCount < amountToEat) return false;
 
         meatCount -= amountToEat;
-
+        EventsSystem.OnUpdateResourcesCount();
         return true;
     }
 
     public void EarnWool(int woolToAdd)
     {
         woolCount += woolToAdd;
+        EventsSystem.OnUpdateResourcesCount();
     }
 
     // <summary>
@@ -106,7 +108,7 @@ public class ResourcesManager : TickObjectMonoBehaviour
     // </summary>
     public bool SpendWool(int woolToSpend)
     {
-        print(woolToSpend + "  " + woolCount);
+        //print(woolToSpend + "  " + woolCount);
         if (woolCount < woolToSpend) return false;
 
         woolCount -= woolToSpend;

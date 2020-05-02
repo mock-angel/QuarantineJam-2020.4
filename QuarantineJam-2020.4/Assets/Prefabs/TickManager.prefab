@@ -43,4 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 963fcdb92a17a3d508f458ea2805430b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TickLength: 15
+  TickSlider: {fileID: 0}
+  TickLength: 5

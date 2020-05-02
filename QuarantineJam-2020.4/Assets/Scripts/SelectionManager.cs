@@ -46,7 +46,7 @@ public class SelectionManager : MonoBehaviour
                     if (selectedSpot != null)
                         selectedSpot.OnDeSelected();
 
-                    selectedSpot = spot;
+                    selectedSpot = null;
                 }
                 else
                 {

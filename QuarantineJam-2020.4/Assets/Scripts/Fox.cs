@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sheep : MonoBehaviour
+public class Fox : MonoBehaviour
 {
     [HideInInspector] public bool IsItInTheFarm;
 
     [SerializeField] private int helthNumber;//how many times should we hit the sheep to hunt
-    [SerializeField] private int foodAfterHunt = 3;//number of the recorces that you gonna git if you hunted the sheep;
     
     private Animator animator;
     private float hitsTakenCounter;
@@ -26,17 +25,6 @@ public class Sheep : MonoBehaviour
         animator.SetFloat("Rotation", transform.rotation.z);
     }
 
-//    public IEnumerator PreduceRecources()
-//    {
-//        while (isItInTheFarm)
-//        {
-//            yield return new WaitForSeconds(60 / numOfRecorcesPreducePerMinute);
-//            if (isItInTheFarm)
-//            {
-//                EventsSystem.OnUpdateResourcesCount(1);
-//            }
-//        }
-//    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -45,14 +33,14 @@ public class Sheep : MonoBehaviour
             hitsTakenCounter+= collision.GetComponent<Weapon>().damageValue;
             if (hitsTakenCounter >= helthNumber)
             {
-                ResourcesManager.Instance.EarnFood(foodAfterHunt);
+                //ResourcesManager.Instance.EarnFood(foodAfterHunt);
                 Destroy(gameObject);
             }
         }
         else if (collision.tag == "Farm")
         {
             IsItInTheFarm = true;
-            SheepFarm.Instance.AddSheep();
+            //SheepFarm.Instance.AddSheep();
 //            StartCoroutine(PreduceRecources());
         }
     }

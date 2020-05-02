@@ -39,13 +39,13 @@ public class TickManager : MonoBehaviour
     }
     
     public void AddITickObject(ITickObject obj){
-        print("Added");
+        //print("Added");
         ITickObjectList.Add(obj);
         
     }
     
     void ProcessTick(){
-        print("Tick processed");
+        //print("Tick processed");
         for(int i = 0; i < ITickObjectList.Count; i++)
         
             ITickObjectList[i].OnTick();
