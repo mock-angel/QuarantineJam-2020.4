@@ -18,6 +18,8 @@ public class AudioManager : MonoBehaviour
     private AudioSource audioSourceSounds;
     [SerializeField]
     private AudioSource audioSourceMusic;
+    [SerializeField]
+    private AudioSource audioSourceNatureMusic;
 
     [Header("Sounds Info")]
     [SerializeField] private SoundInfo soundInfo;
@@ -45,8 +47,8 @@ public class AudioManager : MonoBehaviour
         [Header("Music Audio Clips")]
         public AudioClip mainMusicClip;
         public float mainMusicVolume;
-        public AudioClip startMusicClip;
-        public float startMusicVolume;
+        public AudioClip natureMusicClip;
+        public float natureMusicVolume;
 
         [Header("Game Play Clips")]
         public AudioClip buildTowerClip;
@@ -99,6 +101,7 @@ public class AudioManager : MonoBehaviour
         isSoundsMuted = false;
         numbOfPlayingSounds = 0;
         PlayMainMusic();
+        PlayNatureMusic();
     }
 
     private void Start()
@@ -147,15 +150,15 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayStartMusic()
+    public void PlayNatureMusic()
     {
         if (!isMusicMuted)
         {
             isMusicMuted = false;
             IsSoundsMuted = false;
-            audioSourceMusic.clip = soundInfo.startMusicClip;
-            audioSourceMusic.loop = true;
-            audioSourceMusic.Play();
+            audioSourceNatureMusic.clip = soundInfo.natureMusicClip;
+            audioSourceNatureMusic.loop = true;
+            audioSourceNatureMusic.Play();
             isMainMusicPlaying = false;
             isStartMusicPlaying = true;
             //startSceneMusicImage.sprite = playMusicSprite;
@@ -163,9 +166,9 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            audioSourceMusic.clip = soundInfo.startMusicClip;
-            audioSourceMusic.loop = true;
-            audioSourceMusic.Pause();
+            audioSourceNatureMusic.clip = soundInfo.natureMusicClip;
+            audioSourceNatureMusic.loop = true;
+            audioSourceNatureMusic.Pause();
         }
     }
 
@@ -175,7 +178,7 @@ public class AudioManager : MonoBehaviour
         {
             isMusicMuted = false;
             IsSoundsMuted = false;
-            audioSourceMusic.clip = soundInfo.startMusicClip;
+            audioSourceMusic.clip = soundInfo.natureMusicClip;
             isMainMusicPlaying = false;
             isStartMusicPlaying = true;
             startSceneMusicImage.sprite = playMusicSprite;

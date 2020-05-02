@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Sheep : MonoBehaviour
 {
+    [HideInInspector] public bool isItInTheFarm;
 
     [SerializeField] private int helthNumber;//how many times should we hit the sheep to hunt
     [SerializeField] private int foodAfterHunt = 3;//number of the recorces that you gonna git if you hunted the sheep;
     
-    private bool isItInTheFarm;
     private Animator animator;
     private float hitsTakenCounter;
 
@@ -42,7 +42,7 @@ public class Sheep : MonoBehaviour
     {
         if (collision.tag == "Weapon")
         {
-            hitsTakenCounter++;
+            hitsTakenCounter+= collision.GetComponent<Weapon>().damageValue;
             if (hitsTakenCounter >= helthNumber)
             {
                 ResourcesManager.Instance.EarnFood(foodAfterHunt);
@@ -52,6 +52,7 @@ public class Sheep : MonoBehaviour
         else if (collision.tag == "Farm")
         {
             isItInTheFarm = true;
+            SheepFarm.Instance.AddSheep();
 //            StartCoroutine(PreduceRecources());
         }
     }
@@ -61,7 +62,6 @@ public class Sheep : MonoBehaviour
         if (collision.tag == "Farm")
         {
             isItInTheFarm = false;
-            SheepFarm.Instance.AddSheep();
 //            StopCoroutine(PreduceRecources());
         }
     }

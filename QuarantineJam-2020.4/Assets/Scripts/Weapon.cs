@@ -5,6 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [HideInInspector] public Transform target;
+    [HideInInspector] public int damageValue;
 
     [SerializeField] private float weaponSpeed;
 

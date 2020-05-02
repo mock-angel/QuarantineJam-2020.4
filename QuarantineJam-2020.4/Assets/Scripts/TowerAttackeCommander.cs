@@ -27,7 +27,7 @@ public class TowerAttackeCommander : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        print(tower.huntersInTower);
     }
 
     public void SetTarget(bool hasToTargetWantedAnimal)//if true then target the WantedAnimal else target the NotWantedAnimal
@@ -41,14 +41,15 @@ public class TowerAttackeCommander : MonoBehaviour
     {
         while (true)
         {
-            if (target != null)
+            if (target != null && !target.GetComponent<Sheep>().isItInTheFarm && tower.huntersInTower > 0)
             {
                 Transform weaponObj = Instantiate(weaponPrefab, weaponPosition.position, weaponPrefab.rotation);
                 Weapon weapon = weaponObj.GetComponent<Weapon>();
+                weapon.damageValue = tower.huntersInTower;
                 weapon.target = this.target;
             }
            
-            yield return new WaitForSeconds(60 / (numOfArrowsPerMinute * tower.NumOfHuntersInTheTower));
+            yield return new WaitForSeconds(60 / (numOfArrowsPerMinute * tower.huntersInTower));
         }
     }
 
