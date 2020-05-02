@@ -6,6 +6,7 @@ using TMPro;
 
 public class SheepFarm : TickObjectMonoBehaviour
 {
+    
     public bool sheepFarmBought;
     
     [Space(5)]
@@ -17,8 +18,6 @@ public class SheepFarm : TickObjectMonoBehaviour
     [Space(5)]
     public GameObject buyButton;
     public GameObject AfterBuyPanel;
-    
-    public static SheepFarm Instance {get; private set;}
     
     [Space(5)]
     public int maxSheepLimit; //Max number of sheeps in Farm. Can be upgraded.
@@ -34,11 +33,14 @@ public class SheepFarm : TickObjectMonoBehaviour
     [Range(0, 5)]
     public int woolPerShepherdPerTick = 1;
     
-    void Start(){
+    public static SheepFarm Instance {get; private set;}
+    
+    void Awake(){
         Instance = this;
-        
+    }
+    
+    void Start(){
         currentUpgradeCost = initialUpgradeCost;
-        
     }
     
     void Update(){
@@ -73,6 +75,15 @@ public class SheepFarm : TickObjectMonoBehaviour
             
             currentUpgradeCost *= 2;//Upgrade cost doubles.
         }
+        
+    }
+    
+    public bool AddSheep(){
+        if(sheepsInFarm < maxSheepLimit){
+            sheepsInFarm += 1;
+            return true;
+        }
+        else return false;
         
     }
     

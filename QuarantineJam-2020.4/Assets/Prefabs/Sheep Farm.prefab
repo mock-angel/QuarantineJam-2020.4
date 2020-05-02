@@ -350,6 +350,9 @@ MonoBehaviour:
   maxSheepLimit: 0
   sheepsInFarm: 0
   shepherdsInFarm: 0
+  maxSheepLimitTxt: {fileID: 7224802817765313149}
+  sheepsInFarmTxt: {fileID: 6299482456412277516}
+  shepherdsInFarmTxt: {fileID: 7032268702314025537}
   woolPerShepherdPerTick: 1
 --- !u!1 &2088298299339940169
 GameObject:
