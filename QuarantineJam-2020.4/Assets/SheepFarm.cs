@@ -82,6 +82,10 @@ public class SheepFarm : TickObjectMonoBehaviour
             maxSheepLimit += currentUpgradeCost ;
             
             currentUpgradeCost *= 2;//Upgrade cost doubles.
+            
+            if(SheepFoxGeneratorScript.Instance.addedSheepSpawnPower == 0) 
+                SheepFoxGeneratorScript.Instance.addedSheepSpawnPower = 1;
+            else SheepFoxGeneratorScript.Instance.addedSheepSpawnPower *= 2;
             //addShepherdCountPerAdd = currentUpgradeCost / 10;
         }
         
@@ -123,6 +127,8 @@ public class SheepFarm : TickObjectMonoBehaviour
         
         sheepsInFarm -= numberOfSheepKilled;
         if(sheepsInFarm <= 0) sheepsInFarm = 0;
+        
+        //Add sheep killed music.
     }
     
     public override void OnTick(){

@@ -5,12 +5,12 @@ using UnityEngine;
 public class Sheep : MonoBehaviour
 {
     [HideInInspector] public bool IsItInTheFarm;
-
-    [SerializeField] private int helthNumber;//how many times should we hit the sheep to hunt
+    
+    [SerializeField] private int helthNumber = 3;//how many times should we hit the sheep to hunt
     [SerializeField] private int foodAfterHunt = 3;//number of the recorces that you gonna git if you hunted the sheep;
     
     private Animator animator;
-    private float hitsTakenCounter;
+    [SerializeField] private float hitsTakenCounter;
 
     private void Start()
     {
@@ -19,7 +19,12 @@ public class Sheep : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-
+    
+    public void AddPower(int powerValue){
+        helthNumber += powerValue;
+        foodAfterHunt += (int)(powerValue * 1.5f);
+    }
+    
     // Update is called once per frame
     void Update()
     {

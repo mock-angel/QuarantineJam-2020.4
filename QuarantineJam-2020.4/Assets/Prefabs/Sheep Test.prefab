@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1435282443
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 584631676473961770, guid: 90d979c0ee3032444b196a3d2b8a41ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -234,6 +234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae2025344b14c6f4e8674d33d2968b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsItInTheFarm: 0
   helthNumber: 3
-  numOfRecorcesAfterHunt: 10
-  numOfRecorcesPreducePerMinute: 10
+  foodAfterHunt: 3

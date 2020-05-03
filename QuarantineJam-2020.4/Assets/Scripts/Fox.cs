@@ -10,12 +10,18 @@ public class Fox : MonoBehaviour
     
     private Animator animator;
     private float hitsTakenCounter;
-
+    
+    public GameObject AffectCircle;
+    public float speedWhenEatingSheep = 2f;
+    public float speedWhenCatchingSheep = 3f;
+    
     private void Start()
     {
         IsItInTheFarm = false;
         hitsTakenCounter = 0;
         animator = GetComponent<Animator>();
+        
+        AffectCircle.SetActive(false);
     }
 
 
