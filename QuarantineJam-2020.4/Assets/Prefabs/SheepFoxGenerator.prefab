@@ -48,9 +48,11 @@ MonoBehaviour:
   foxPrefab: {fileID: 769380121905262598, guid: 4e30f77fb1e7ab44b8123e9a488c626f,
     type: 3}
   spawnSheepTime: 6
-  foxSpawnTime: 5
+  foxSpawnTime: 15
+  spawnSheepVariance: 1
+  spawnFoxVariance: 3
   spawnFox: 0
   finalFarmPosition: {fileID: 0}
   finalEscapePosition: {fileID: 0}
   farmBuilt: 1
-  probabilityOfEnteringFarm: 0.5
+  probabilityOfEnteringFarm: 0.788

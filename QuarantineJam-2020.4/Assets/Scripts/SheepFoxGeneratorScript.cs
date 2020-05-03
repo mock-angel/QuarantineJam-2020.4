@@ -10,26 +10,40 @@ public class SheepFoxGeneratorScript : MonoBehaviour
     public GameObject foxPrefab;
     
     //amount of time before next sheep is spawned.
-    public float spawnSheepTime;
-    public float foxSpawnTime;
+    [Space(5)]
+    public float spawnSheepTime = 6f;
+    public float foxSpawnTime = 15f;
     
+    public float spawnSheepVariance = 1f;
+    public float spawnFoxVariance = 3f;
+    
+    [Space(5)]
     public bool spawnFox;
     
+    [Space(5)]
     float nextSheepSpawnTime = 0;
     float nextFoxSpawnTime = 0;
     
+    public int addedSheepSpawnPower = 0;
+    
+    [Space(5)]
     public Transform finalFarmPosition;
     public Transform finalEscapePosition;
     
-    public bool farmBuilt;
     [Range(0f, 1f)]
     public float probabilityOfEnteringFarm;
     
-    // Update is called once per frame
+    public static SheepFoxGeneratorScript Instance {get; private set;}
+    
+    void Awake(){
+        Instance = this;
+    }
+    
+    // Update is called once per frame.
     void Update()
     {   
         if(nextSheepSpawnTime <= Time.time){
-            nextSheepSpawnTime = Time.time + spawnSheepTime;
+            nextSheepSpawnTime = Time.time + spawnSheepTime + Random.Range(-spawnFoxVariance, spawnFoxVariance);
             
             //spawn sheep now.
             CreateSheep();
@@ -39,7 +53,7 @@ public class SheepFoxGeneratorScript : MonoBehaviour
         
         //If spawnFox is true, spawn fox.
         if(spawnFox && nextFoxSpawnTime <= Time.time){
-            nextFoxSpawnTime = Time.time + foxSpawnTime;
+            nextFoxSpawnTime = Time.time + foxSpawnTime + Random.Range(-spawnFoxVariance, spawnFoxVariance);
             
             CreateFox();
         }
@@ -53,16 +67,14 @@ public class SheepFoxGeneratorScript : MonoBehaviour
         //Decide whether sheep goes inside farm.
         //...
         AIDestinationSetter destinationSetter = sheep.GetComponent<AIDestinationSetter>();
-        
-        bool enterFarm = false;
+        Sheep sheepScript = sheep.GetComponent<Sheep>();
+        sheepScript.AddPower(addedSheepSpawnPower); 
         
         float probe = Random.Range(0f, 1f);
         if(probe <= probabilityOfEnteringFarm && SheepFarm.Instance.sheepFarmBought)
             destinationSetter.target = finalFarmPosition;
         else destinationSetter.target = finalEscapePosition;
         
-//        ResourcesManager.Instance.GainSettlers(1);
-        //print("" + probe);
     }
     
     void CreateFox(){
@@ -73,12 +85,7 @@ public class SheepFoxGeneratorScript : MonoBehaviour
         //...
         AIDestinationSetter destinationSetter = fox.GetComponent<AIDestinationSetter>();
 
-        bool enterFarm = false;
-
-        float probe = Random.Range(0f, 1f);
-//        if (probe <= probabilityOfEnteringFarm && SheepFarm.Instance.sheepFarmBought)
         destinationSetter.target = finalFarmPosition;
-//        else destinationSetter.target = finalEscapePosition;
     }
 }
 
