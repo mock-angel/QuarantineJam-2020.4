@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: -3715253239974233095}
   - component: {fileID: -5938903027450364712}
   - component: {fileID: 8985945367855812569}
-  - component: {fileID: 4587161968918385695}
   - component: {fileID: 1955473685099708754}
   - component: {fileID: -164218381204831444}
+  - component: {fileID: 4523957285892224548}
   m_Layer: 8
   m_Name: Settler Test
   m_TagString: WantedAnimal
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 3921439824237903039, guid: 90d979c0ee3032444b196a3d2b8a41ee,
+  m_Sprite: {fileID: -820129351428409161, guid: c7c8b7f3c70888f4ebc0aabc97f3b764,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -188,25 +188,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!95 &4587161968918385695
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769380121905262598}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 90147474062d35641a802b72421c68a0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &1955473685099708754
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -224,7 +205,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.27, y: 0.49}
+    oldSize: {x: 0.38, y: 0.62}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -248,3 +229,22 @@ MonoBehaviour:
   secToMoveSheepAround: 5
   patrolPoitsParent: {fileID: 2322639919651517616, guid: f3df187ccf55d804dab74018104905a4,
     type: 3}
+--- !u!95 &4523957285892224548
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769380121905262598}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a82d0f47a8a0e804b8b754e500637cc6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
