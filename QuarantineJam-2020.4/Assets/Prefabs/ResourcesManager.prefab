@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numOfResources: 16
-  meatCount: 100
+  meatCount: 23
   woolCount: 10
   idleSettlersCount: 3
   resourcesCountTxt: {fileID: 0}
