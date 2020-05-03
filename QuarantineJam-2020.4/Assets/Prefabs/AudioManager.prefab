@@ -336,7 +336,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playMusicSprite: {fileID: 21300000, guid: 14043752eda33dc48a580a5b65456132, type: 3}
   muteMusicSprite: {fileID: 21300000, guid: c0b13defffcfe6a4099dc7d400e747f3, type: 3}
-  musicBtnImage: {fileID: 0}
   maxNumberOfSounds: 40
   audioSourceSounds: {fileID: 4401282082852000070}
   audioSourceMusic: {fileID: 334682387571501290}
