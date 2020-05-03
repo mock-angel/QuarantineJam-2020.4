@@ -20,9 +20,10 @@ public class ResourcesManager : TickObjectMonoBehaviour
 
     [SerializeField] private TextMeshProUGUI meatCountTxt;
     [SerializeField] private TextMeshProUGUI woolCountTxt;
-
     [SerializeField] private TextMeshProUGUI idleSettlersCountTxt;
-
+    
+    [SerializeField] private TextMeshProUGUI idleSettlersDupCountTxt;
+    
     //    [SerializeField] private TextMeshProUGUI huntersCountTxt;
 
     [SerializeField] private int numOfHuntersToDiePerMinute;//the number of the hunters are gonna die starving  per minute.
@@ -35,7 +36,6 @@ public class ResourcesManager : TickObjectMonoBehaviour
     {
         Instance = this;
         TickManager.Instance.AddITickObject((ITickObject)this);
-        //        EventsSystem.onUpdateResourcesCount += UpdateResourcesNumber;
     }
 
     void Start()
@@ -50,7 +50,7 @@ public class ResourcesManager : TickObjectMonoBehaviour
         //Update all UI display texts.
         meatCountTxt.text = meatCount.ToString();
         woolCountTxt.text = woolCount.ToString();
-        idleSettlersCountTxt.text = idleSettlersCount.ToString();
+        idleSettlersDupCountTxt.text = idleSettlersCountTxt.text = idleSettlersCount.ToString();
     }
 
     public void EarnFood(int foodToAdd) {
@@ -77,7 +77,7 @@ public class ResourcesManager : TickObjectMonoBehaviour
 
     // <summary>
     // Returns true if operation was successful.
-    // Use this to remove said amount of ide settlers to convert them to shepherd or hunter.
+    // Use this to remove said amount of idle settlers to convert them to shepherd or hunter.
     // </summary>
     public bool GetSettler(int count) {
         if (count > idleSettlersCount) return false;
@@ -88,13 +88,12 @@ public class ResourcesManager : TickObjectMonoBehaviour
     }
 
 
-    public void AddSettler()
+    public void OnClickedBuySettler()
     {
-        if (meatCount >= setlerMeatCost)
+        if (EatFood(setlerMeatCost))
         {
             print("settler Added");
             idleSettlersCount++;
-            EatFood(setlerMeatCost);
         }
 
     }
@@ -108,7 +107,6 @@ public class ResourcesManager : TickObjectMonoBehaviour
     // </summary>
     public bool SpendWool(int woolToSpend)
     {
-        //print(woolToSpend + "  " + woolCount);
         if (woolCount < woolToSpend) return false;
 
         woolCount -= woolToSpend;
@@ -119,6 +117,7 @@ public class ResourcesManager : TickObjectMonoBehaviour
     public override void OnTick() {
         int c = idleSettlersCount;
 
+        //Lunch time for idle settlers.
         EatFoodCumulative(idleSettlersCount, 1, out idleSettlersCount);
 
         if (c > idleSettlersCount) AudioManager.Instance.PlayHunterDiedAudio();
@@ -135,34 +134,6 @@ public class ResourcesManager : TickObjectMonoBehaviour
         for (int i = 0; i < c; i++) if (!ResourcesManager.Instance.EatFood(foodPerUnit)) unitSurvived -= 1;
     }
 }
+
+
     
-//    private void OnDestroy()
-//    {
-//        EventsSystem.onUpdateResourcesCount -= UpdateResourcesNumber;
-//    }
-
-//    public IEnumerator KillHunters()
-//    {
-//        while (hasToKillHunters)
-//        {
-//            yield return new WaitForSeconds(60 / numOfHuntersToDiePerMinute);
-//            if (hasToKillHunters && CreatedHunters.Count > 0)
-//            {
-//                int rand = Random.Range(0, CreatedHunters.Count);
-//                GameObject hunter = CreatedHunters[rand];
-//                Tower tower = hunter.transform.parent.GetComponent<Tower>();
-//                tower.NumOfHuntersInTheTower--;
-//                if (tower.NumOfHuntersInTheTower <= 0)
-//                {
-//                    tower.DestroyTower();
-//                }
-//                else
-//                {
-//                    Destroy(hunter);
-//                }
-//                CreatedHunters.RemoveAt(rand);
-//                audioManager.PlayHunterDiedAudio();
-//            }
-//        }
-//    }
-
