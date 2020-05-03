@@ -83,8 +83,12 @@ public class Sheep : MonoBehaviour
         }
         else if (collision.tag == "Farm")
         {
-            IsItInTheFarm = true;
-            SheepFarm.Instance.AddSheep();
+            
+            if(SheepFarm.Instance.AddSheep()){
+                SheepFarm.Instance.SheepQueue.Enqueue(gameObject);
+                IsItInTheFarm = true;
+            }
+            else Destroy(gameObject);
 //            StartCoroutine(PreduceRecources());
         }
     }
