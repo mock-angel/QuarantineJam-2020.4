@@ -13,6 +13,8 @@ public class Tower : TickObjectMonoBehaviour
     
     [SerializeField] private int meatEatenPerHunterPerTick;
     
+    public GameObject towerObject;
+    
     public int initialUpgradeCost = 5;
     int currentUpgradeCost;
    
@@ -86,7 +88,7 @@ public class Tower : TickObjectMonoBehaviour
         {
             towerMenu.SetActive(true);//hide the menu
         }
-
+        towerObject.SetActive(true);
     }
 
     public void OnDeSelected()
@@ -95,6 +97,7 @@ public class Tower : TickObjectMonoBehaviour
         {
             towerMenu.SetActive(false);//show the menu
         }
+        towerObject.SetActive(false);
     }
     
     public override void OnTick(){
