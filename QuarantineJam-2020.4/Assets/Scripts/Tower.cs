@@ -90,7 +90,11 @@ public class Tower : TickObjectMonoBehaviour
 ////            resourcesManager.CreatedHunters.Remove(hunters[i]);
 //        }
     }
-
+    
+    public void OnClickedTower(){
+        SelectionManager.Instance.OnClickedTower(this);
+    }
+    
     public void OnSelected()
     {
         if (!towerMenu.activeInHierarchy)

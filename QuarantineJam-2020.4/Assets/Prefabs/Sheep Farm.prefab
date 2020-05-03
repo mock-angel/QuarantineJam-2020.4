@@ -2099,7 +2099,7 @@ GameObject:
   - component: {fileID: 3875396373034081030}
   - component: {fileID: 6551889075317283076}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Sheep Farm Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2145,7 +2145,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 20
   m_TargetDisplay: 0
 --- !u!114 &3875396373034081030
 MonoBehaviour:
