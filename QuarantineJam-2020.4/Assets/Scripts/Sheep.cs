@@ -11,8 +11,8 @@ public class Sheep : MonoBehaviour
     [SerializeField] private int helthNumber = 3;//how many times should we hit the sheep to hunt
     
     [SerializeField] private int foodAfterHunt = 3;//number of the recorces that you gonna git if you hunted the sheep;
-    [SerializeField] private Transform patrolPoitsParent;
     [SerializeField] private float secToMoveSheepAround = 5;
+    [SerializeField] private Transform patrolPoitsParent;
 
     private Transform[] petrolPoints;
     private Animator animator;
