@@ -2492,6 +2492,11 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 1681881727}
+    - target: {fileID: 1448477281685921953, guid: d899d06810a5ade44ab12479aeef95bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1450723753831660074, guid: d899d06810a5ade44ab12479aeef95bb,
         type: 3}
       propertyPath: m_Camera
@@ -2808,6 +2813,75 @@ PrefabInstance:
       objectReference: {fileID: 1831718689}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a6dce2e1580f984bbab8d64d91c539c, type: 3}
+--- !u!1001 &1951430250304444148
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3644812462358353612, guid: 3e23f037701b1884db500512d7e7e006,
+        type: 3}
+      propertyPath: m_Name
+      value: Sheep Patrol Points Parent
+      objectReference: {fileID: 0}
+    - target: {fileID: 8094630570528005618, guid: 3e23f037701b1884db500512d7e7e006,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8094630570528005618, guid: 3e23f037701b1884db500512d7e7e006,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8094630570528005618, guid: 3e23f037701b1884db500512d7e7e006,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8094630570528005618, guid: 3e23f037701b1884db500512d7e7e006,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8094630570528005618, guid: 3e23f037701b1884db500512d7e7e006,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8094630570528005618, guid: 3e23f037701b1884db500512d7e7e006,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8094630570528005618, guid: 3e23f037701b1884db500512d7e7e006,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8094630570528005618, guid: 3e23f037701b1884db500512d7e7e006,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8094630570528005618, guid: 3e23f037701b1884db500512d7e7e006,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8094630570528005618, guid: 3e23f037701b1884db500512d7e7e006,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8094630570528005618, guid: 3e23f037701b1884db500512d7e7e006,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3e23f037701b1884db500512d7e7e006, type: 3}
 --- !u!1001 &2554106503061299576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20227,6 +20301,11 @@ PrefabInstance:
       propertyPath: musicBtnImage
       value: 
       objectReference: {fileID: 3861731808954930702}
+    - target: {fileID: 3006154057269592096, guid: 1a066815d6eb3b442bcc614d52f8e514,
+        type: 3}
+      propertyPath: soundInfo.mainMusicClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d6b02013c7cedbb5ab058da04d83ec2, type: 3}
     - target: {fileID: 8614928436503469750, guid: 1a066815d6eb3b442bcc614d52f8e514,
         type: 3}
       propertyPath: m_Name

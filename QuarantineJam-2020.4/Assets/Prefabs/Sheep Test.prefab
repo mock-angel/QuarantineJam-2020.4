@@ -234,6 +234,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae2025344b14c6f4e8674d33d2968b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helthNumber: 3
-  numOfRecorcesAfterHunt: 10
-  numOfRecorcesPreducePerMinute: 10
+  IsItInTheFarm: 0
+  IsItMoving: 0
+  TargetMovingTo: {fileID: 0}
+  helthNumber: 0
+  foodAfterHunt: 3
+  patrolPoitsParent: {fileID: 8094630570528005618, guid: 3e23f037701b1884db500512d7e7e006,
+    type: 3}
