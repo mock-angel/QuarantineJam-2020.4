@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class SwitchSceneScript : MonoBehaviour
 {   
-    public string mainMenuSceneName = "NormalLevel";
-    public string levelSceneName = "MainMenu";
+    public string mainMenuSceneName = "MainMenu";
+    public string levelSceneName = "LevelScene";
     
     public void LoadLevelScene(){
         SceneManager.LoadScene(levelSceneName);
