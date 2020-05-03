@@ -41,7 +41,15 @@ public class Tower : TickObjectMonoBehaviour
         if(ResourcesManager.Instance.SpendWool(currentUpgradeCost)){
             
             currentUpgradeCost *= 2;
-            huntersInTower++;
+            
+            if(ResourcesManager.Instance.GetSettler(1)) huntersInTower++;
+            
+            else {
+                //Put back the wool we took to upgrade tower.
+                ResourcesManager.Instance.EarnWool(currentUpgradeCost);
+                
+                return;
+            }
             
             AudioManager.Instance.PlayUpgradeTowerAudio();
             
