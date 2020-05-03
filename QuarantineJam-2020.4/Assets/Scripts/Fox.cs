@@ -46,7 +46,7 @@ public class Fox : MonoBehaviour
         {
             IsItInTheFarm = true;
             
-            SheepFarm.Instance.OnSheepKilled(1);
+            SheepFarm.Instance.OnSheepKilled();
             
             Destroy(gameObject);
         }

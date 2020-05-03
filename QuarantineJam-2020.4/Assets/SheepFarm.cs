@@ -9,6 +9,8 @@ public class SheepFarm : TickObjectMonoBehaviour
     
     public bool sheepFarmBought;
     
+    public Queue<GameObject> SheepQueue;
+    
     [Space(5)]
     public int initialPurchaseCost = 50;
     public int initialUpgradeCost = 5;
@@ -43,6 +45,8 @@ public class SheepFarm : TickObjectMonoBehaviour
     void Awake(){
         Instance = this;
         TickManager.Instance.AddITickObject((ITickObject)this);
+        
+        SheepQueue = new Queue<GameObject>();
     }
     
     void Start(){
@@ -111,7 +115,12 @@ public class SheepFarm : TickObjectMonoBehaviour
     }
     
     public void OnSheepEscaped(int numberOfSheepEscaped){
-        //Do Something here.
+        
+        for (int i = 0;i < numberOfSheepEscaped; i++){
+        
+            Destroy(SheepFarm.Instance.SheepQueue.Dequeue());
+            
+        }
         
 //        GameObject sheep = //Get the sheep.;
         
@@ -123,11 +132,18 @@ public class SheepFarm : TickObjectMonoBehaviour
     // <summary>
     // Kill sheep if fox enters farm.
     // </summary>
-    public void OnSheepKilled(int numberOfSheepKilled){
+    public void OnSheepKilled(){
+        //Kill 1 sheep.
         
-        sheepsInFarm -= numberOfSheepKilled;
-        if(sheepsInFarm <= 0) sheepsInFarm = 0;
+        sheepsInFarm -= 1;
+        if(sheepsInFarm <= 0)
+            sheepsInFarm = 0;
+            
+        else{
+            OnSheepEscaped(1);
         
+            AudioManager.Instance.PlaySheepDiedAudio();
+        }
         //Add sheep killed music.
     }
     
