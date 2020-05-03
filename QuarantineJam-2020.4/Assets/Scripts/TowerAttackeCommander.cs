@@ -33,10 +33,13 @@ public class TowerAttackeCommander : MonoBehaviour
         {
             HasToAttack = false;
         }
-        if (nextShootTime <= Time.time)
+        else
         {
-            nextShootTime += timeToShootArrow;
-            Shoot();
+            if (nextShootTime <= Time.time)
+            {
+                nextShootTime = Time.time + timeToShootArrow;
+                Shoot();
+            }
         }
     }
 
