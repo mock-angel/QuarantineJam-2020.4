@@ -18,10 +18,12 @@ public class Sheep : MonoBehaviour
     private Animator animator;
     private AIDestinationSetter destinationSetter;
     private bool isPatroling;
+    private AudioManager audioManager;
     [SerializeField] private float hitsTakenCounter;
 
     private void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         isPatroling = false;
         petrolPoints = new Transform[patrolPoitsParent.childCount];
 
@@ -75,9 +77,11 @@ public class Sheep : MonoBehaviour
         if (collision.tag == "Weapon")
         {
             hitsTakenCounter+= collision.GetComponent<Weapon>().damageValue;
+
             if (hitsTakenCounter >= helthNumber)
             {
                 ResourcesManager.Instance.EarnFood(foodAfterHunt);
+                audioManager.PlaySheepDiedAudio();
                 Destroy(gameObject);
             }
         }

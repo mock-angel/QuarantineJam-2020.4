@@ -1150,6 +1150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startMenu: {fileID: 4826673587270932431}
+  audioManager: {fileID: 0}
   pauseButton: {fileID: 2220987878469634885}
   resumeButton: {fileID: 5906272166747486040}
   muteMusicButton: {fileID: 3242641700829914434}
