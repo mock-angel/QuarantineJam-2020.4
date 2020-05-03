@@ -237,3 +237,7 @@ MonoBehaviour:
   IsItInTheFarm: 0
   helthNumber: 3
   foodAfterHunt: 3
+  IsItMoving: 0
+  TargetMovingTo: {fileID: 0}
+  patrolPoitsParent: {fileID: 8094630570528005618, guid: 3e23f037701b1884db500512d7e7e006,
+    type: 3}

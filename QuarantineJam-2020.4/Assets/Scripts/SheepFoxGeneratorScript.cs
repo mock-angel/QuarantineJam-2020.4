@@ -63,7 +63,7 @@ public class SheepFoxGeneratorScript : MonoBehaviour
     void CreateSheep(){
         GameObject sheep = Instantiate(sheepPrefab, gameObject.transform);
         sheep.transform.position = gameObject.transform.position;
-        
+        Sheep sheepScript = sheep.GetComponent<Sheep>();
         //Decide whether sheep goes inside farm.
         //...
         AIDestinationSetter destinationSetter = sheep.GetComponent<AIDestinationSetter>();
@@ -71,10 +71,16 @@ public class SheepFoxGeneratorScript : MonoBehaviour
         sheepScript.AddPower(addedSheepSpawnPower); 
         
         float probe = Random.Range(0f, 1f);
-        if(probe <= probabilityOfEnteringFarm && SheepFarm.Instance.sheepFarmBought)
+        if (probe <= probabilityOfEnteringFarm && SheepFarm.Instance.sheepFarmBought)
+        {
             destinationSetter.target = finalFarmPosition;
-        else destinationSetter.target = finalEscapePosition;
-        
+            sheepScript.TargetMovingTo = finalFarmPosition;
+        }
+        else
+        { 
+            destinationSetter.target = finalEscapePosition;
+            sheepScript.TargetMovingTo = finalEscapePosition;
+        }
     }
     
     void CreateFox(){
