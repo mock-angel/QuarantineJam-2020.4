@@ -31,7 +31,11 @@ public class ResourcesManager : TickObjectMonoBehaviour
 
     private bool hasToKillHunters;
     private bool waskillerCalled;
-
+    
+    public GameObject settlersPrefab;
+    public int settlersCreatedUsingPrefabs = 0;
+    public Transform SpawnPositionTransform;
+    
     private void Awake()
     {
         Instance = this;
@@ -43,6 +47,12 @@ public class ResourcesManager : TickObjectMonoBehaviour
         waskillerCalled = false;
         hasToKillHunters = false;
         resourcesCountTxt.text = numOfResources.ToString();
+        
+        //3 settlers.
+        Instantiate(settlersPrefab, SpawnPositionTransform.position, Quaternion.identity);
+        Instantiate(settlersPrefab, SpawnPositionTransform.position, Quaternion.identity);
+        Instantiate(settlersPrefab, SpawnPositionTransform.position, Quaternion.identity);
+        settlersCreatedUsingPrefabs = 3;
     }
 
     void Update()
@@ -92,7 +102,11 @@ public class ResourcesManager : TickObjectMonoBehaviour
     {
         if (EatFood(setlerMeatCost))
         {
-            print("settler Added");
+            settlersCreatedUsingPrefabs++;
+            
+            if(settlersCreatedUsingPrefabs <= 10)
+                Instantiate(settlersPrefab, SpawnPositionTransform.position, Quaternion.identity);
+            
             idleSettlersCount++;
         }
 
