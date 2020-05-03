@@ -100,10 +100,10 @@ public class SheepFarm : TickObjectMonoBehaviour
     }
     
     public void OnClickedAddShepherd(){
+        
         if(ResourcesManager.Instance.GetSettler(addShepherdCountPerAdd))
         
             shepherdsInFarm += addShepherdCountPerAdd;
-        
     }
     
     public void OnSheepEscaped(int numberOfSheepEscaped){
@@ -120,6 +120,7 @@ public class SheepFarm : TickObjectMonoBehaviour
     // Kill sheep if fox enters farm.
     // </summary>
     public void OnSheepKilled(int numberOfSheepKilled){
+        
         sheepsInFarm -= numberOfSheepKilled;
         if(sheepsInFarm <= 0) sheepsInFarm = 0;
     }

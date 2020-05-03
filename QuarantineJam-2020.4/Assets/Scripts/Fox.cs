@@ -19,7 +19,7 @@ public class Fox : MonoBehaviour
     }
 
 
-    // Update is called once per frame
+    // Update is called once per frame.
     void Update()
     {
         animator.SetFloat("Rotation", transform.rotation.z);
