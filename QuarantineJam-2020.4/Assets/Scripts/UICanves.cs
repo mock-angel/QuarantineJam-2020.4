@@ -23,7 +23,7 @@ public class UICanves : MonoBehaviour
     
     private void Awake()
     {
-        OnClickedResume();
+        OnClickedPause();
     }
 
     // Start is called before the first frame update
