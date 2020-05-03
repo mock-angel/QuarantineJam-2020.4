@@ -3441,6 +3441,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6260509701992229963, guid: 4c71436961ce2134387447fc46f2f162,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1681881727}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c71436961ce2134387447fc46f2f162, type: 3}
 --- !u!1001 &7418543510359673865
@@ -3507,9 +3512,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3006154057269592096, guid: 1a066815d6eb3b442bcc614d52f8e514,
         type: 3}
-      propertyPath: soundInfo.mainMusicClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 3d6b02013c7cedbb5ab058da04d83ec2, type: 3}
+      propertyPath: soundInfo.sheepDiedVolume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006154057269592096, guid: 1a066815d6eb3b442bcc614d52f8e514,
+        type: 3}
+      propertyPath: soundInfo.wolfHurtVolume
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006154057269592096, guid: 1a066815d6eb3b442bcc614d52f8e514,
+        type: 3}
+      propertyPath: soundInfo.hunterDiedVolume
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8614928436503469750, guid: 1a066815d6eb3b442bcc614d52f8e514,
         type: 3}
       propertyPath: m_Name

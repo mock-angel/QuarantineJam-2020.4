@@ -14,9 +14,12 @@ public class Fox : MonoBehaviour
     public GameObject AffectCircle;
     public float speedWhenEatingSheep = 2f;
     public float speedWhenCatchingSheep = 3f;
-    
+
+    private AudioManager audioManager;
+
     private void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         IsItInTheFarm = false;
         hitsTakenCounter = 0;
         animator = GetComponent<Animator>();
@@ -37,17 +40,21 @@ public class Fox : MonoBehaviour
         if (collision.tag == "Weapon")
         {
             hitsTakenCounter += collision.GetComponent<Weapon>().damageValue;
-            
+            audioManager.PlayWolfHurtAudio();
             if (hitsTakenCounter >= helthNumber)
-            
+            { 
                 Destroy(gameObject);
+                audioManager.PlayWolfDiedAudio();
+            }
+                
         }
         else if (collision.tag == "Farm")
         {
             IsItInTheFarm = true;
             
             SheepFarm.Instance.OnSheepKilled();
-            
+            audioManager.PlaySheepDiedAudio();
+            audioManager.PlayWolfAttackAudio();
             Destroy(gameObject);
         }
     }

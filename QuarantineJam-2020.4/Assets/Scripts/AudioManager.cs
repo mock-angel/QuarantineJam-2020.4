@@ -49,6 +49,8 @@ public class AudioManager : MonoBehaviour
         public float mainMusicVolume;
         public AudioClip natureMusicClip;
         public float natureMusicVolume;
+        public AudioClip titleMusicClip;
+        public float titleMusicVolume;
 
         [Header("Game Play Clips")]
         public AudioClip buildTowerClip;
@@ -71,6 +73,10 @@ public class AudioManager : MonoBehaviour
         public float hitWeaponVolume;
         public AudioClip hunterDiedClip;
         public float hunterDiedVolume;
+        public AudioClip wolfHurtClip;
+        public float wolfHurtVolume;
+        public AudioClip wolfAttackClip;
+        public float wolfAttackVolume;
 
         //public AudioClip spearClip;
         //public float spearVolume;
@@ -100,12 +106,27 @@ public class AudioManager : MonoBehaviour
         isMusicMuted = false;
         isSoundsMuted = false;
         numbOfPlayingSounds = 0;
-        PlayMainMusic();
+        PlayTitleMusic();
+        
         //PlayNatureMusic();
     }
 
     private void Start()
     {
+        StartCoroutine(PlayIdelSheepSound());
+        StartCoroutine(PlayIdelWolfSound());
+        
+    }
+
+
+
+    public void PlayTitleMusic()
+    {
+        isMusicMuted = false;
+        IsSoundsMuted = false;
+        audioSourceMusic.clip = soundInfo.titleMusicClip;
+        audioSourceMusic.loop = true;
+        audioSourceMusic.Play();
     }
 
     public void PlayMainMusic()
@@ -296,6 +317,24 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void PlayWolfHurtAudio()
+    {
+        if (!IsSoundsMuted)
+        {
+            numbOfPlayingSounds++;
+            audioSourceSounds.PlayOneShot(soundInfo.wolfHurtClip, soundInfo.wolfHurtVolume);
+        }
+    }
+
+    public void PlayWolfAttackAudio()
+    {
+        if (!IsSoundsMuted)
+        {
+            numbOfPlayingSounds++;
+            audioSourceSounds.PlayOneShot(soundInfo.wolfAttackClip, soundInfo.wolfAttackVolume);
+        }
+    }
+
     public void PlayThrowWeaponAudio()
     {
         if (!IsSoundsMuted)
@@ -347,6 +386,24 @@ public class AudioManager : MonoBehaviour
         {
             numbOfPlayingSounds++;
             audioSourceSounds.PlayOneShot(soundInfo.hunterDiedClip, soundInfo.hunterDiedVolume);
+        }
+    }
+
+    public IEnumerator PlayIdelSheepSound()
+    {
+        while (true)
+        {
+            PlaySheepSoundAudio();
+            yield return new WaitForSeconds(10);
+        }
+    }
+
+    public IEnumerator PlayIdelWolfSound()
+    {
+        while (true)
+        {
+            PlayWolfSoundAudio();
+            yield return new WaitForSeconds(13);
         }
     }
 

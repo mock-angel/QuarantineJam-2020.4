@@ -341,10 +341,12 @@ MonoBehaviour:
   audioSourceMusic: {fileID: 334682387571501290}
   audioSourceNatureMusic: {fileID: 1618105089740731526}
   soundInfo:
-    mainMusicClip: {fileID: 8300000, guid: aa97caf9150303c499ee1e88c5a8b845, type: 3}
+    mainMusicClip: {fileID: 8300000, guid: 3d6b02013c7cedbb5ab058da04d83ec2, type: 3}
     mainMusicVolume: 1
     natureMusicClip: {fileID: 8300000, guid: 503ef73c26baf6843bb035cdb3bf20ec, type: 3}
     natureMusicVolume: 2
+    titleMusicClip: {fileID: 8300000, guid: 120306931180dc47e8bf691f131ef21c, type: 3}
+    titleMusicVolume: 1
     buildTowerClip: {fileID: 8300000, guid: dbe80853864fab046a4fe21a8f24b477, type: 3}
     buildTowerVolume: 1
     upgradeTowerClip: {fileID: 8300000, guid: df8790b7c80606d438e1d80aff43d04a, type: 3}
@@ -352,18 +354,22 @@ MonoBehaviour:
     sheepSoundClips:
     - {fileID: 8300000, guid: e0e40498a8bb8bb40890be08796a80ad, type: 3}
     - {fileID: 8300000, guid: 00212479229f7aa42aaf8ce1273f5c6a, type: 3}
-    sheepSoundVolume: 1
-    sheepDiedClip: {fileID: 8300000, guid: 3ad9399e0541bfc4a857182c44b36fa7, type: 3}
+    sheepSoundVolume: 0.3
+    sheepDiedClip: {fileID: 8300000, guid: 4385e6d95e09100498cfed7f08081f50, type: 3}
     sheepDiedVolume: 1
     destroyTowerClip: {fileID: 8300000, guid: 8755f3a178867224ab3aed73dfb88a87, type: 3}
     destroyTowerVolume: 1
     wolfSoundClip: {fileID: 8300000, guid: eff9d916b3a60944a92c61dc784392ff, type: 3}
     wolfSoundVolume: 1
-    wolfDiedClip: {fileID: 0}
-    wolfDiedVolume: 0
+    wolfDiedClip: {fileID: 8300000, guid: ae6a3a5d03452fd48b207dbe802ce439, type: 3}
+    wolfDiedVolume: 2
     throwWeaponClip: {fileID: 0}
     throwWeaponVolume: 0
     hitWeaponClip: {fileID: 0}
     hitWeaponVolume: 0
     hunterDiedClip: {fileID: 8300000, guid: 519e7cafe150ce346a6b80347378f432, type: 3}
     hunterDiedVolume: 1
+    wolfHurtClip: {fileID: 8300000, guid: fba89afdfa6253d4b83f8a539c0f19a7, type: 3}
+    wolfHurtVolume: 2
+    wolfAttackClip: {fileID: 8300000, guid: d311cbacccd4bc947a23e5b8fe4b5b5a, type: 3}
+    wolfAttackVolume: 1

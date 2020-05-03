@@ -10,7 +10,7 @@ public class UICanves : MonoBehaviour
     //[SerializeField] private GameObject pauseImg;
 //    [SerializeField] private Sprite pauseSprite;
 //    [SerializeField] private Sprite playSprite;
-//    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private AudioManager audioManager;
 
 
 //    private Image pauseBtnImg;
@@ -72,6 +72,7 @@ public class UICanves : MonoBehaviour
         startMenu.SetActive(false);
         
         Time.timeScale = 1;
+        audioManager.PlayMainMusic();
     }
     
     public void OnClickedPlayMusicState()
