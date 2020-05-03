@@ -30,27 +30,26 @@ public class Fox : MonoBehaviour
     {
         if (collision.tag == "Weapon")
         {
-            hitsTakenCounter+= collision.GetComponent<Weapon>().damageValue;
+            hitsTakenCounter += collision.GetComponent<Weapon>().damageValue;
+            
             if (hitsTakenCounter >= helthNumber)
-            {
-                //ResourcesManager.Instance.EarnFood(foodAfterHunt);
+            
                 Destroy(gameObject);
-            }
         }
         else if (collision.tag == "Farm")
         {
             IsItInTheFarm = true;
-            //SheepFarm.Instance.AddSheep();
-//            StartCoroutine(PreduceRecources());
+            
+            SheepFarm.Instance.OnSheepKilled(1);
+            
+            Destroy(gameObject);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Farm")
-        {
+        
             IsItInTheFarm = false;
-//            StopCoroutine(PreduceRecources());
-        }
     }
 }

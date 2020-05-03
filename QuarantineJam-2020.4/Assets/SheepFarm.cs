@@ -82,7 +82,7 @@ public class SheepFarm : TickObjectMonoBehaviour
             maxSheepLimit += currentUpgradeCost ;
             
             currentUpgradeCost *= 2;//Upgrade cost doubles.
-            addShepherdCountPerAdd = currentUpgradeCost / 10;
+            //addShepherdCountPerAdd = currentUpgradeCost / 10;
         }
         
     }
@@ -106,6 +106,24 @@ public class SheepFarm : TickObjectMonoBehaviour
         
     }
     
+    public void OnSheepEscaped(int numberOfSheepEscaped){
+        //Do Something here.
+        
+//        GameObject sheep = //Get the sheep.;
+        
+//        AIDestinationSetter destinationSetter = sheep.GetComponent<AIDestinationSetter>();
+        
+//        destinationSetter.target = finalEscapePosition;
+    }
+    
+    // <summary>
+    // Kill sheep if fox enters farm.
+    // </summary>
+    public void OnSheepKilled(int numberOfSheepKilled){
+        sheepsInFarm -= numberOfSheepKilled;
+        if(sheepsInFarm <= 0) sheepsInFarm = 0;
+    }
+    
     public override void OnTick(){
         
         //Calculate amount of wool Gained this turn.
@@ -126,10 +144,13 @@ public class SheepFarm : TickObjectMonoBehaviour
         
         sheepsInFarm -= sheepLostThisTurn;
         
+        if(sheepLostThisTurn != 0 ) OnSheepEscaped(sheepLostThisTurn);
+        
         //Calculate loss of shepherds due to attrition.
         
         ResourcesManager.Instance.EatFoodCumulative(shepherdsInFarm, 1, out shepherdsInFarm);
         
+        addShepherdCountPerAdd = (shepherdsInFarm / 10) + 1;
     }
 }
 

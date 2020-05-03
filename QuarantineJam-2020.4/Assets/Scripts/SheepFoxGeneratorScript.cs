@@ -35,6 +35,8 @@ public class SheepFoxGeneratorScript : MonoBehaviour
             CreateSheep();
         }
         
+        if((!spawnFox) && SheepFarm.Instance.sheepFarmBought) spawnFox = true;
+        
         //If spawnFox is true, spawn fox.
         if(spawnFox && nextFoxSpawnTime <= Time.time){
             nextFoxSpawnTime = Time.time + foxSpawnTime;
@@ -74,9 +76,9 @@ public class SheepFoxGeneratorScript : MonoBehaviour
         bool enterFarm = false;
 
         float probe = Random.Range(0f, 1f);
-        if (probe <= probabilityOfEnteringFarm && SheepFarm.Instance.sheepFarmBought)
-            destinationSetter.target = finalFarmPosition;
-        else destinationSetter.target = finalEscapePosition;
+//        if (probe <= probabilityOfEnteringFarm && SheepFarm.Instance.sheepFarmBought)
+        destinationSetter.target = finalFarmPosition;
+//        else destinationSetter.target = finalEscapePosition;
     }
 }
 
