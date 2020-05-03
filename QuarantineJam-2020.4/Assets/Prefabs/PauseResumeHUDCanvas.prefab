@@ -119,7 +119,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2638439420144629102}
-        m_MethodName: LoadMainMenuScene
+        m_MethodName: LoadLevelScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1645,7 +1645,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2638439420144629102}
-        m_MethodName: LoadLevelScene
+        m_MethodName: LoadMainMenuScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1690,7 +1690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -112.029785, y: -196.80005}
+  m_AnchoredPosition: {x: -99.6001, y: -196.79999}
   m_SizeDelta: {x: 172.47, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7069089040105999470
