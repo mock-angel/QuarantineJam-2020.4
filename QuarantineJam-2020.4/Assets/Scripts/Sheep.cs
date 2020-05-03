@@ -16,7 +16,6 @@ public class Sheep : MonoBehaviour
 
     private Transform[] petrolPoints;
     private Animator animator;
-    private float hitsTakenCounter;
     private AIDestinationSetter destinationSetter;
     private bool isPatroling;
     [SerializeField] private float hitsTakenCounter;

@@ -63,7 +63,6 @@ public class SheepFoxGeneratorScript : MonoBehaviour
     void CreateSheep(){
         GameObject sheep = Instantiate(sheepPrefab, gameObject.transform);
         sheep.transform.position = gameObject.transform.position;
-        Sheep sheepScript = sheep.GetComponent<Sheep>();
         //Decide whether sheep goes inside farm.
         //...
         AIDestinationSetter destinationSetter = sheep.GetComponent<AIDestinationSetter>();
