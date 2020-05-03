@@ -8,6 +8,7 @@ TagManager:
   - Farm
   - NotWantedAnimal
   - Weapon
+  - EndPointForSheep
   layers:
   - Default
   - TransparentFX

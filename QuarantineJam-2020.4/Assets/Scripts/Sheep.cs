@@ -91,6 +91,12 @@ public class Sheep : MonoBehaviour
             else Destroy(gameObject);
 //            StartCoroutine(PreduceRecources());
         }
+        else if (collision.tag == "EndPointForSheep")
+        {
+            Destroy(gameObject);
+//            StartCoroutine(PreduceRecources());
+        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
