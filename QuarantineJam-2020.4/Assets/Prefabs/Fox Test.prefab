@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsItInTheFarm: 0
-  helthNumber: 2
+  helthNumber: 3
   AffectCircle: {fileID: 0}
   speedWhenEatingSheep: 2
   speedWhenCatchingSheep: 3

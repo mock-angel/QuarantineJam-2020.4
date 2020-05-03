@@ -222,11 +222,11 @@ MonoBehaviour:
   IsItInTheFarm: 0
   IsItMoving: 0
   TargetMovingTo: {fileID: 0}
-  helthNumber: 3
+  helthNumber: 2
   foodAfterHunt: 3
+  secToMoveSheepAround: 3
   patrolPoitsParent: {fileID: 8094630570528005618, guid: 3e23f037701b1884db500512d7e7e006,
     type: 3}
-  secToMoveSheepAround: 3
   hitsTakenCounter: 0
 --- !u!61 &1955473685099708754
 BoxCollider2D:
