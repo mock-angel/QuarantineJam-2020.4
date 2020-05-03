@@ -12,19 +12,16 @@ public class TowerSpot : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
-    // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         EventsSystem.onUpdateResourcesCount += ChickForCreatAbility;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void OnClickedSpot(){
+        SelectionManager.Instance.OnClickedSpot(this);
     }
-
+    
     public void OnSelected()
     {
         if (resourcesManager.SpendWool(numOfWoolNeededToCreat))

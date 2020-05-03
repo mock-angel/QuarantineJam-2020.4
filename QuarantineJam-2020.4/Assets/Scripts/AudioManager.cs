@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private Sprite playMusicSprite;
     [SerializeField] private Sprite muteMusicSprite;
     //[SerializeField] private Image startSceneMusicImage;
-    [SerializeField] private Image musicBtnImage;
+//    [SerializeField] private Image musicBtnImage;
     [SerializeField] private int maxNumberOfSounds;
     [Header("Audio Sources")]
     [SerializeField]
@@ -122,7 +122,7 @@ public class AudioManager : MonoBehaviour
         audioSourceNatureMusic.loop = true;
         audioSourceNatureMusic.Play();
 
-        musicBtnImage.sprite = muteMusicSprite;
+//        musicBtnImage.sprite = muteMusicSprite;
     }
 
     //public void UnMuteMainMusic()
@@ -205,7 +205,7 @@ public class AudioManager : MonoBehaviour
         IsSoundsMuted = true;
         audioSourceNatureMusic.Pause();
 
-        musicBtnImage.sprite = playMusicSprite;
+//        musicBtnImage.sprite = playMusicSprite;
         //SaveFiles.SetStringPlayerPref("IsMusicMuted", isMusicMuted.ToString());//save the current music state
     }
 
