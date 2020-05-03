@@ -3169,6 +3169,11 @@ PrefabInstance:
       propertyPath: finalEscapePosition
       value: 
       objectReference: {fileID: 1831718689}
+    - target: {fileID: 8137954469215197355, guid: 4a6dce2e1580f984bbab8d64d91c539c,
+        type: 3}
+      propertyPath: probabilityOfEnteringFarm
+      value: 0.788
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a6dce2e1580f984bbab8d64d91c539c, type: 3}
 --- !u!1001 &2554106503061299576
