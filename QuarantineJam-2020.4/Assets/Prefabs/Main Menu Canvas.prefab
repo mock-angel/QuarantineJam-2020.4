@@ -183,7 +183,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7094391155753305516}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2107248888316665983}
+        m_MethodName: onExitCall
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7094391155898776175
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +207,8 @@ GameObject:
   - component: {fileID: 7094391155898776170}
   - component: {fileID: 7094391155898776173}
   - component: {fileID: 7094391155898776172}
+  - component: {fileID: 8322373455552559403}
+  - component: {fileID: 2107248888316665983}
   m_Layer: 5
   m_Name: Main Menu Canvas
   m_TagString: Untagged
@@ -285,6 +298,32 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8322373455552559403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7094391155898776175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d58f95316a5a121efaccb8b0bc938782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuSceneName: NormalLevel
+  levelSceneName: MainMenu
+--- !u!114 &2107248888316665983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7094391155898776175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06813936d9a536fe0bbdda387a8ad7da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7094391156004214296
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,7 +597,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7094391156218459801}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8322373455552559403}
+        m_MethodName: LoadLevelScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7094391156600441851
 GameObject:
   m_ObjectHideFlags: 0
