@@ -20,9 +20,10 @@ public class ResourcesManager : TickObjectMonoBehaviour
 
     [SerializeField] private TextMeshProUGUI meatCountTxt;
     [SerializeField] private TextMeshProUGUI woolCountTxt;
-
     [SerializeField] private TextMeshProUGUI idleSettlersCountTxt;
-
+    
+    [SerializeField] private TextMeshProUGUI idleSettlersDupCountTxt;
+    
     //    [SerializeField] private TextMeshProUGUI huntersCountTxt;
 
     [SerializeField] private int numOfHuntersToDiePerMinute;//the number of the hunters are gonna die starving  per minute.
@@ -49,7 +50,7 @@ public class ResourcesManager : TickObjectMonoBehaviour
         //Update all UI display texts.
         meatCountTxt.text = meatCount.ToString();
         woolCountTxt.text = woolCount.ToString();
-        idleSettlersCountTxt.text = idleSettlersCount.ToString();
+        idleSettlersDupCountTxt.text = idleSettlersCountTxt.text = idleSettlersCount.ToString();
     }
 
     public void EarnFood(int foodToAdd) {
